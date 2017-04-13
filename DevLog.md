@@ -2,14 +2,15 @@
 
 <h2>Este es el repositorio del equipo de trabajo del ramo INFO175 Taller de Construccion de Software, primer semestre 2017 </h2>
 
-<h5>Nombre del grupo: WoS </h5>
+<h4>Nombre del grupo: WoS </h4>
 
-<h5>Integrantes: 	</h5> 
-<h4>Israel Díaz</h4>
-Elard Koch
-Jorge Obando
-Fernando Reyes
-Tyler Sheldon 
+<h4>Integrantes: 	</h4> 
+* <h5>Israel Díaz</h5>
+* <h5>Elard Koch</h5>
+* <h5>Jorge Obando</h5>
+* <h5>Fernando Reyes</h5>
+* <h5>Tyler Sheldon</h5>
+
   
 
 
