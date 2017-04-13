@@ -4,7 +4,7 @@
 
 Nombre del grupo: WoS
 
- <h6>Integrantes: 	</h6> 
+ * <h6>Integrantes: 	</h6> 
 	* *Israel Díaz*
 	* *Elard Koch*
  	* *Jorge Obando*
