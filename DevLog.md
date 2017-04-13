@@ -2,7 +2,7 @@
 
 <h2>Este es el repositorio del equipo de trabajo del ramo INFO175 Taller de Construccion de Software, primer semestre 2017 </h2>
 
-Nombre del grupo: WoS
+<h5>Nombre del grupo: WoS </h5>
 
  * <h6>Integrantes: 	</h6> 
 	* *Israel Díaz*
