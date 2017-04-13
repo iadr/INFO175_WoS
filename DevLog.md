@@ -11,10 +11,10 @@ Nombre del grupo: WoS
  	* *Fernando Reyes*
  	* *Tyler Sheldon*
 
-Requerimiento General:
+<h6>Requerimiento General: </h6>
 
-	* Seguir el progreso y la actividad de los estudiantes en grupos en el tiempo.
-	* Comparar el progreso entre G1 y G2, G3 y G4, G5 y G6 en una sola visualización y hacer un grafico para cada comparación y que tenga una opción para comparar bajo y alto pretest. 
+* Seguir el progreso y la actividad de los estudiantes en grupos en el tiempo.
+* Comparar el progreso entre G1 y G2, G3 y G4, G5 y G6 en una sola visualización y hacer un grafico para cada comparación y que tenga una opción para comparar bajo y alto pretest. 
 
 Histora del Usuario: 
   > "Quiero una visualizacion de datos con la que pueda seguir 
