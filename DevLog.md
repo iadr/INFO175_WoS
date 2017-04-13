@@ -6,11 +6,12 @@
 
  <h5>Integrantes: 	</h5> 
  <h6> 
- * Israel Díaz
- * Elard Koch
- * Jorge Obando
- * Fernando Reyes
- * Tyler Sheldon 
+ 	* Israel Díaz
+ 	* Elard Koch
+  * Jorge Obando
+  * Fernando Reyes
+  * Tyler Sheldon 
+  
  </h6>
 
 <h6>Requerimiento General: </h6>
