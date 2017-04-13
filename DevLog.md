@@ -15,12 +15,12 @@
   
 
 
-<h4>Requerimiento General: </h4>
+<h3>Requerimiento General: </34>
 
 * Seguir el progreso y la actividad de los estudiantes en grupos en el tiempo. 
 * Comparar el progreso entre G1 y G2, G3 y G4, G5 y G6 en una sola visualización y hacer un grafico para cada comparación y que tenga una opción para comparar bajo y alto pretest. 
 
-Histora del Usuario: 
+<h3>Histora del Usuario: </h3>
   > "Quiero una visualizacion de datos con la que pueda seguir 
   > el progreso y la actividad de los estudiantes, en grupos 
   > o individualmente, en el tiempo".
