@@ -1,4 +1,4 @@
-#Equipo WoS Info175 <h1>
+<h1>Equipo WoS Info175 </h1>
 
 Este es el repositorio del equipo de trabajo del ramo INFO175 Taller de Construccion de Software, primer semestre 2017
 
