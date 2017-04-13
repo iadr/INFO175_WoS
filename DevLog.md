@@ -5,8 +5,12 @@
 <h4>Nombre del grupo: WoS </h4>
 
 <h4>Integrantes: 	</h4> 
-* Israel Díaz
- <h5>  *Tyler Sheldon</h5>
+Israel Díaz
+Elard Koch
+Fernando Reyes
+Jorge Obando
+Tyler Sheldon
+
 
   
 
