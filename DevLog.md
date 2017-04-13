@@ -4,7 +4,7 @@
 
 Nombre del grupo: WoS
 
-Integrantes: 	*Israel Díaz
+Integrantes: 	*Israel Díaz*
 	        *Elard Koch
 		*Jorge Obando
 		*Fernando Reyes
