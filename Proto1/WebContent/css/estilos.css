@@ -1,0 +1,62 @@
+*{
+font-family: 'Palanquin Dark', sans-serif;
+}
+body{
+  margin:0;
+  background-size: auto;
+}
+#sidebar{
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: rgba(91, 12, 7, 0.84);
+  color: rgba(255, 255, 255, 1);
+  border-left:1px;
+}
+#top{
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background: rgba(64, 4, 0, 0.84);
+}
+#sidebar ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#profile h2, #profile h6{
+  text-align: center;
+  margin: 0;
+  padding: 0px;
+}
+#sidebar .profile:hover{
+}
+#sidebar li:hover{
+    background: rgba(111, 0, 0, 0.71);
+    border-left:5px solid rgba(64, 4, 0, 1);
+}
+#sidebar ul li h4{
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+#profileimg{
+  width: 120px;
+  height: 120px;
+  margin-left: 35px;
+  margin-top: 25px;
+  border-radius: 100%;
+  border: 6px solid rgba(0,0,0,0.2);
+}
+#viewdiv{
+  position:relative;
+  background: rgba(37, 255, 10, 0.57);
+  left:200px;
+  height:100%;
+
+  padding-right: 500px;
+}
+
+#view{
+
+}
