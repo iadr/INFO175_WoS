@@ -5,12 +5,6 @@ body{
   margin:0;
   background-size: auto;
 }
-#container{
-
-  overflow: hidden;
-  height: 768px;
-  width: 1366px;
-}
  #sidebar{
   float: left;
   position: fixed;
