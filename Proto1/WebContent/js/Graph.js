@@ -73,7 +73,7 @@ else transitionStacked();
 
 function transitionGrouped() {
 y.domain([0, yMax]);
-
+//cambio
 rect.transition()
     .duration(500)
     .delay(function(d, i) { return i * 10; })
