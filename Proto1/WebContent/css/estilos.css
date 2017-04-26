@@ -59,6 +59,6 @@ body{
 .view{
   margin: 1.5%;
   position:relative;
-  height: 95%;
+  height: 100%;
   background: rgba(168, 168, 168, 0.3);
 }

@@ -1,6 +1,6 @@
 
-var n = 5, // The number of series.
-  m = 3; // The number of values per series.
+var n = 2, // The number of series.
+  m = 15; // The number of values per series.
 
 // The xz array has m elements, representing the x-values shared by all series.
 // The yz array has n elements, representing the y-values of each of the n series.
@@ -104,9 +104,28 @@ function bumps(m) {
 var values = [], i, j, w, x, y, z;
 
 // Initialize with uniform random values in [0.1, 0.2).
-for (i = 0; i < m; ++i) {
-  values[i] = 0.1 + 0.1 * Math.random();
-}
+/*for (i = 0; i < m; ++i) {
+  values[i] = 20.0 + 0.1 * Math.random()*0;
+  if(i==3)values[i]=3.0;
+  if(i==7)values[i]=21.0;
+  if(i==12)values[i]=700.0;
+}*/
+
+values[0]=100;
+values[1]=235;
+values[2]=60;
+values[3]=345;
+values[4]=1;
+values[5]=235;
+values[6]=10;
+values[7]=35;
+values[8]=70;
+values[9]=130;
+values[10]=63;
+values[11]=42;
+values[12]=90;
+values[13]=110;
+values[14]=340;
 
 // Add five random bumps.
 for (j = 0; j < 5; ++j) {
