@@ -42,10 +42,9 @@ body{
   padding: 10px;
 }
  #profileimg{
-  width: 120px;
-  height: 120px;
-  margin-left: 20%;
-  margin-top: 10%;
+  width: 70%;
+  height: 70%;
+  margin:10% 15% 5%;
   border-radius: 100%;
   border: 6px solid rgba(0,0,0,0.2);
 }
