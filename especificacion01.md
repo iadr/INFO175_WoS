@@ -12,53 +12,41 @@ No recibe parametros
 
 <h2>Salida</h2>
 
-<[
- < STUDENT,
-  <...
-<]
+```javascript
+[
+  STUDENT,
+  ...
+]
 
 // STUDENT object:
 {
   "studentid": "student123456",
-  
   "pretest": 0.10, // 0-1
-  
   "posttest": 0.67, // 0-1
-  
   "pretest_binned": "low", // low/high
   
   "q_att": 9, // attempts to QUIZJET questions 
-  
   "q_att_succ": 5, // attempts to QUIZJET questions that were correct
-  
   "dist_q_att": 9, // number of distinct QUIZJET questions attempted
-  
   "dist_q_att_succ": 9, // number of distinct QUIZJET questions attempted correclty at least once
   
   "p_att": 10, // attempts to PARSONS problems
-  
   "p_att_succ": 9,  // attempts to PARSONS problems that were correct
-  
   "dist_p_att": 5, // number of distinct PARSONS problems attempted
-  
   "dist_p_att_succ": 5, // number of distinct PARSONS problems attempted correclty at least once
   
   "dist_e": 0, // distinct Examples (WEBEX) viewed
-  
   "e_lines": 0, // total number of lines of Examples (WEBEX) viewed
   
   "dist_ae": 7, // distinct Animated Examples viewed
-  
   "ae_lines": 37, // total number of lines of Animated Examples viewed
   
   "q_time": 600, // total amount of time spent in QUIZJET questions
-  
   "p_time": 591, // total amount of time spent in PARSONS problems
-  
   "e_time": 0, // total amount of time spent in Examples
-  
   "ae_time": 155 // total amount of time spent in Animated Examples
 }
+```
 Consulta SQL
 
 select A.`user`, S.treatments_16 as vis, S.gender, S.pretest, S.posttest, S.pretest_binned,
