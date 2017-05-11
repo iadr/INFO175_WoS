@@ -128,7 +128,9 @@ d3.selectAll("svg").selectAll("circle")
 
 // creates the zoom handler
 var zoom_handler = d3.zoom()
-	.on("zoom", do_the_zoom);
+	.on("zoom", do_the_zoom)
+	.scaleExtent([1,10])
+	.translateExtent([[0, 0], [svg_w, svg_h]]);
 
 //	what happens when zoom is triggered
 function do_the_zoom() {
