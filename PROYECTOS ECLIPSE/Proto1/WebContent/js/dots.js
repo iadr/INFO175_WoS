@@ -25,7 +25,7 @@ for (var q = 0; q < 3; q++) {
 //escalas de fecha y nivel
 
 var date_scale = d3.scaleTime()
-	.domain([new Date(2016, 1, 1), new Date(2016, 8, 1)])
+	.domain([new Date(2016, 2, 1), new Date(2016, 7, 1)]) //build this off of actual dates perhaps?
     .range([padding, svg_w - padding]);
 
 var nivel_scale = d3.scaleLinear()
@@ -46,18 +46,15 @@ for (var q = 0; q < 3; q++) {
 	// dataset aleatorio
 	var dataset = [];
 	for (var i = 0; i < 1000; i++) {           				
-		//random date setup	
-		//will this glitch cuz of months with less than 31 days?
-	    var la_fecha = new Date(2016, Math.round(Math.random() * 8), Math.round(Math.random() * 31), Math.round(Math.random() * 23), Math.round(Math.random() * 60), Math.round(Math.random() * 60));
+		//random date setup	- will this glitch cuz of months with less than 31 days?
+	    var la_fecha = new Date(2016, Math.round(Math.random() * 4) + 2, Math.round(Math.random() * 31), Math.round(Math.random() * 23), Math.round(Math.random() * 60), Math.round(Math.random() * 60));
 	    var newLevel = Math.round(Math.random() * 30);
 	    var pretest = "hi";
 	    if (Math.random() < .5) {
 	    	pretest = "lo";
 	    }
-	    var studentID = "s1";
-	    if (Math.random() < .5) {
-	    	studentID = "s2";
-	    }
+	    var student_array = ["s0","s1","s2","s3","s4","s5","s6","s7","s8","s9","s10"]
+	    var studentID = student_array[Math.round(Math.random() * 9)];
 	    dataset.push([la_fecha, newLevel, pretest, studentID]);	    
 	}
 	
