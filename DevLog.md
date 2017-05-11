@@ -11,7 +11,7 @@
     <h4>Fernando Reyes</h4>
     <h4>Jorge Obando</h4>
     <h4>Tyler Sheldon</h4>
-   </p>
+  </p>
 
 
   
@@ -28,14 +28,21 @@
   > o individualmente, en el tiempo".
 
 <h3>Semana 1</h3>
-  <p> eligimos un mockup basico
+  <p> eligimos un mockup basico </p>
 <h3>Semana 2</h3>
+  <p> mejoramos el mockup </p>
 <h3>Semana 3</h3>
+  <p> presentamos el prototipo </p>
 <h3>Semana 4</h3>
+  <p> presentamos el segundo prototipo </p>
 <h3>Semana 5</h3>
+  <p> </p>
 <h3>Semana 6</h3>
+  <p> re-evaluamos el mockuo original --> figuras de puntas en vez de lineas </p>
 <h3>Semana 7</h3>
+  <p> construimos un prototipo nuevo
 <h3>Semana 8</h3>
+  <p> reunimos con el profe para reorganizacion de Git y reevaluacion de mockups </p>
 <h3>Semana 9</h3>
 
 
