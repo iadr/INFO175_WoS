@@ -25,4 +25,15 @@
   > el progreso y la actividad de los estudiantes, en grupos 
   > o individualmente, en el tiempo".
 
+<h3>Semana 1</h3>
+  <p> eligimos un mockup basico
+<h3>Semana 2</h3>
+<h3>Semana 3</h3>
+<h3>Semana 4</h3>
+<h3>Semana 5</h3>
+<h3>Semana 6</h3>
+<h3>Semana 7</h3>
+<h3>Semana 8</h3>
+<h3>Semana 9</h3>
+
 
