@@ -1,0 +1,52 @@
+Integrantes: Fernando Reyes, Elard koch, Israel Diaz, Jorge Obando, Tyler Sheldon														
+
+TODO
+
+001 Mockup separados - Colocar mockup como imagenes separadas	
+  Prioridad: baja
+  Respondable: Israel	  
+  Avance:					
+002	Organizar Bitacora - Devlog	
+  Prioridad: baja
+  Responsable: Jorge
+  Avance:
+003	Codigo separado	- Añadir al repositorio el codigo de avance	
+  Prioridad: baja
+  Responsable: Jorge
+  Avance:
+004	Distinguir entre grupos/personas - Integrar zoom/mouseover
+  Prioridad: alta
+  Responsable: Kiwi
+  Avance: 31,415%
+005	Definir colores	
+  Prioridad: media
+  Responsable:
+  Avance:
+006	Añadir topicos: eje Y	
+  Prioridad: media
+  Responsable: Kiwi
+  Avance:
+007	Click y ver Usuario	- Integrar zoom
+  Prioridad: alta
+  Responsable:
+  Avance:
+008	Filtro actividad			
+  Prioridad: media
+  Responsable: Israel
+  Avance:
+009	Filtro subgrupo	
+  Prioridad: media
+  Responsable: Israel
+  Avance:
+010	Layout Grafico		
+  Prioridad: alta
+  Responsable: Kiwi
+  Avance:
+011	Layout	
+  Prioridad: media
+  Responsable:
+  Avance:
+012	Significado leyenda
+  Prioridad: baja
+  Responsable: Fernando
+  Avance:
