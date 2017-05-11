@@ -9,6 +9,13 @@ var dot_opacity = .4;
 // hacer el bucle de todas las figuras (quizpet, parsons, etc.)
 for (j = 0; j < 4; j++) {
 	
+	//ejemplos
+	//2016-12-01 15:19:10.0
+	//2016-11-19 08:55:49.650
+	//2016-11-28 14:07:08.263
+	//2016-11-28 14:08:10.0
+	//2016-11-30 14:38:21.0
+	
 	//datos aleatorios para probar
 	//	formato_ej: [fecha(0-100), nivel(0-9), alto/bajo(hi/lo) pretest]
 	var dataset = [];
@@ -19,7 +26,11 @@ for (j = 0; j < 4; j++) {
 	    if (Math.random() < .5) {
 	    	pretest = "lo";
 	    }
-	    dataset.push([newDate, newLevel, pretest]);	
+	    var studentID = "s1";
+	    if (Math.random() < .5) {
+	    	studentID = "s2";
+	    }
+	    dataset.push([newDate, newLevel, pretest, studentID]);	
 	    
 	}
 	
@@ -47,7 +58,7 @@ for (j = 0; j < 4; j++) {
 		.data(dataset)
 		.enter()
 		.append("circle")
-		.attr("r", 3) 					//encogelo eventualmente
+		.attr("r", 2) 					//encogelo eventualmente
 		.attr("cx", function(d) {
 			return date_scale(d[0]);
 		})
@@ -62,12 +73,26 @@ for (j = 0; j < 4; j++) {
 				return "blue";
 			}
 		})
-		.attr("fill-opacity", .4); 		//bajalo eventualmente
+		.attr("class", function(d) {
+			return d[3];
+		})
+		.attr("fill-opacity", .4) 		//bajalo eventualmente
+		.on("mouseover", function(d) {
+		    d3.select("svg").selectAll(".s1")
+	      		.attr("r", 2.5);
+		    d3.select("svg").selectAll("*:not(.s1)")
+	    		.attr("fill-opacity", 0);
+		})
+		.on("mouseout", function(d) {
+		    d3.select("svg").selectAll("circle")
+	      		.attr("r", 2)
+	    		.attr("fill-opacity", dot_opacity);
+		});
 		
 	svg.append("g")
 		.attr("transform", "translate(0," + (svg_h - padding) + ")")
     	.call(date_axis)
     	.select("path")
-    	.attr("opacity", "0");	//inelegante
-	
+    	.attr("opacity", "0");	//inelegante	
+    	
 }
