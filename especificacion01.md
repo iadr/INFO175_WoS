@@ -71,5 +71,5 @@ from activity_traces A, student_info S
 	group by A.`user`
 Procesamiento
 
-gender : se codifica a female/male de los valores 0/1
-pretest_binned : se codifica a low/high de los valores 1/2
+```
+###### pretest_binned : se codifica a low/high con 1 = low y 2= high
