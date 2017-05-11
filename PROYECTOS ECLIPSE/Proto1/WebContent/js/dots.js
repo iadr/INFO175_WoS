@@ -108,7 +108,7 @@ d3.selectAll("svg").selectAll("circle")
     				return dot_opacity*.4;
     			}
     			else {return dot_opacity};
-    		});
+    		})
 		
 		parent_svg.selectAll("." + d[3])
 			.transition()
@@ -125,11 +125,19 @@ d3.selectAll("svg").selectAll("circle")
 	    	.attr("fill-opacity", dot_opacity);
 	});
 
-var zoom = d3.zoom()
-	.scaleExtent([1, 10])
-	.on("zoom", zoomed);
 
-function zoomed() {
-	  svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+//janky zoom/pan
+
+// creates the zoom handler
+var zoom_handler = d3.zoom()
+	.on("zoom", do_the_zoom);
+
+//	what happens when zoom is triggered
+function do_the_zoom() {
+	  d3.selectAll("circle").attr("transform", d3.event.transform);
 	}
-	
+
+// tells the zoom handler where to listen
+for (var q = 0; q < 3; q++) {
+	zoom_handler(svg_array[q]);
+}
