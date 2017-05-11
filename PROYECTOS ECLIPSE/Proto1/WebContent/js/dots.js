@@ -4,6 +4,8 @@ var svg_w = 800;
 var svg_h = 100;
 var padding = 20;
 
+var dot_opacity = .4;
+
 // hacer el bucle de todas las figuras (quizpet, parsons, etc.)
 for (j = 0; j < 4; j++) {
 	
