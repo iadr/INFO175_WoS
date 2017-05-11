@@ -9,29 +9,24 @@ var dot_opacity = .4;
 
 
 // hacer SVG elementos
-var svg1 = d3.select("body")
-	.select("#interface")
-	.append("svg")
-	.attr("width", svg_w)
-	.attr("height", svg_h);
-var svg2 = d3.select("body")
-	.select("#interface")
-	.append("svg")
-	.attr("width", svg_w)
-	.attr("height", svg_h);
-var svg3 = d3.select("body")
-	.select("#interface")
-	.append("svg")
-	.attr("width", svg_w)
-	.attr("height", svg_h);
 
-var svg_array = [svg1, svg2, svg3]
+var svg_array = []
+
+for (var q = 0; q < 3; q++) {
+	var an_svg = d3.select("body")
+		.select("#interface")
+		.append("svg")
+		.attr("width", svg_w)
+		.attr("height", svg_h);
+	svg_array.push(an_svg);
+}
 
 
 //escalas de fecha y nivel
-var date_scale = d3.scaleLinear()
-	.domain([0, 1000]) //domain de fechas
-	.range([padding, svg_w - padding]);
+
+var date_scale = d3.scaleTime()
+	.domain([new Date(2016, 1, 1), new Date(2016, 8, 1)])
+    .range([padding, svg_w - padding]);
 
 var nivel_scale = d3.scaleLinear()
 	.domain([0, 30])	//domain de nivel
@@ -44,10 +39,16 @@ var date_axis = d3.axisBottom(date_scale);
 for (var q = 0; q < 3; q++) {
 	var svg = svg_array[q];
 	
+	//input ejemplos
+	//2016-12-01 15:19:10.0
+	//2016-11-30 14:38:21.0
+	
 	// dataset aleatorio
 	var dataset = [];
-	for (var i = 0; i < 500; i++) {           				
-	    var newDate = Math.round(Math.random() * 1000);		
+	for (var i = 0; i < 1000; i++) {           				
+		//random date setup	
+		//will this glitch cuz of months with less than 31 days?
+	    var la_fecha = new Date(2016, Math.round(Math.random() * 8), Math.round(Math.random() * 31), Math.round(Math.random() * 23), Math.round(Math.random() * 60), Math.round(Math.random() * 60));
 	    var newLevel = Math.round(Math.random() * 30);
 	    var pretest = "hi";
 	    if (Math.random() < .5) {
@@ -57,7 +58,7 @@ for (var q = 0; q < 3; q++) {
 	    if (Math.random() < .5) {
 	    	studentID = "s2";
 	    }
-	    dataset.push([newDate, newLevel, pretest, studentID]);	    
+	    dataset.push([la_fecha, newLevel, pretest, studentID]);	    
 	}
 	
 	// hacer los puntos(circulos)
@@ -135,6 +136,7 @@ var zoom_handler = d3.zoom()
 //	what happens when zoom is triggered
 function do_the_zoom() {
 	  d3.selectAll("circle").attr("transform", d3.event.transform);
+	  //d3.selectAll("g").attr("transform", d3.event.transform);      //fix this eventually
 	}
 
 // tells the zoom handler where to listen
