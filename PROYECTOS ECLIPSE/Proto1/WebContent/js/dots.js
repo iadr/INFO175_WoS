@@ -3,7 +3,7 @@
 // global variables
 var svg_w = 800;
 var svg_h = 150;
-var padding = 20;
+var padding = 10;
 
 var dot_opacity = .4;
 
@@ -100,23 +100,36 @@ d3.selectAll("svg").selectAll("circle")
 
 	.on("mouseover", function(d) {
 		var parent_svg = d3.select(this.parentNode);
-		
-		parent_svg.selectAll("." + d[3])
-      		.attr("r", 2.5)
-      		.attr("fill-opacity", .9);
-		
+
 		parent_svg.selectAll("circle")
+			.transition()
     		.attr("fill-opacity", function(d2) {
     			if (d[3] != d2[3]) {
     				return dot_opacity*.4;
     			}
     			else {return dot_opacity};
     		});
+		
+		parent_svg.selectAll("." + d[3])
+			.transition()
+      		.attr("r", 2.5)
+      		.attr("fill-opacity", .9);
+		
 	})		
 	
 	.on("mouseout", function(d) {
 		d3.selectAll("circle")
+			.transition()
+			.delay(100)
 	      	.attr("r", 2)
 	    	.attr("fill-opacity", dot_opacity);
 	});
+
+var zoom = d3.zoom()
+	.scaleExtent([1, 10])
+	.on("zoom", zoomed);
+
+function zoomed() {
+	  svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+	}
 	
