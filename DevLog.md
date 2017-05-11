@@ -2,7 +2,7 @@
 
 <h2>Este es el repositorio del equipo de trabajo del ramo INFO175 Taller de Construccion de Software, primer semestre 2017 </h2>
 
-<h3>WoS </h3>
+<h2>WoS </h2>
 
 <h3>Integrantes: 	</h3>
   <p>
