@@ -55,6 +55,9 @@ body{
   height: 100%;
   background: rgba(0, 0, 0, 0);
 }
+svg{
+	padding: 30px;
+}
 .view{
   margin: 1.5%;
   position:relative;
