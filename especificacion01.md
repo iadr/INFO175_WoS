@@ -69,7 +69,8 @@ select A.`user`, S.treatments_16 as vis, S.gender, S.pretest, S.posttest, S.pret
 from activity_traces A, student_info S 
 	where A.`user` = S.`userid` and A.durationseconds > 0 and A.appid > -1 
 	group by A.`user`
-Procesamiento
-
+	
 ```
+## Procesamiento
+
 ###### pretest_binned : se codifica a low/high con 1 = low y 2= high
