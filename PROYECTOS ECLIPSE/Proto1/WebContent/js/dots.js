@@ -22,7 +22,6 @@ for (var q = 0; q < 3; q++) {
 	svg_array.push(an_svg);
 }
 
-
 //escalas de fecha y nivel
 
 var date_scale = d3.scaleTime()
@@ -64,7 +63,7 @@ for (var q = 0; q < 3; q++) {
 		.data(dataset)
 		.enter()
 		.append("circle")
-		.attr("r", 2) 					//encogelo eventualmente
+		.attr("r", 2) 
 		.attr("cx", function(d) {
 			return date_scale(d[0]);
 		})
@@ -86,10 +85,11 @@ for (var q = 0; q < 3; q++) {
 		
 	// draws the axes
 	svg.append("g")
+		.attr("class", "axis")
 		.attr("transform", "translate(0," + (svg_h - padding) + ")")
-		.call(date_axis)
-		.select("path")
-		.attr("opacity", "0");	//inelegante
+		.call(date_axis);
+		//.select("path")
+		//.attr("opacity", "0");	//inelegante
 
 }
 
@@ -99,7 +99,8 @@ d3.selectAll("svg").selectAll("circle")
 
 	.on("mouseover", function(d) {
 		var parent_svg = d3.select(this.parentNode);
-
+		
+		// other students fade
 		parent_svg.selectAll("circle")
 			.transition()
     		.attr("fill-opacity", function(d2) {
@@ -109,6 +110,7 @@ d3.selectAll("svg").selectAll("circle")
     			else {return dot_opacity};
     		})
 		
+    	// current student destacado
 		parent_svg.selectAll("." + d[3])
 			.transition()
       		.attr("r", 2.5)
@@ -116,6 +118,7 @@ d3.selectAll("svg").selectAll("circle")
 		
 	})		
 	
+	// return everyone to normal
 	.on("mouseout", function(d) {
 		d3.selectAll("circle")
 			.transition()
@@ -130,8 +133,8 @@ d3.selectAll("svg").selectAll("circle")
 // creates the zoom handler
 var zoom_handler = d3.zoom()
 	.on("zoom", do_the_zoom)
-	.scaleExtent([1,10])
-	.translateExtent([[0, 0], [svg_w, (svg_h)]]);
+	.scaleExtent([1,100])
+	.translateExtent([[0, 0], [svg_w, svg_h]]);
 
 //where to listen for zooming
 var los_tres_svgs = d3.select("#interface").selectAll("svg");
@@ -142,7 +145,9 @@ function do_the_zoom() {
 	var current_svg = d3.select(this);
 	
 	// transforms all the circles
-	d3.selectAll("circle").attr("transform", d3.event.transform);
+	d3.selectAll("circle")
+		.attr("transform", d3.event.transform);
+		//.attr("r", 3/zoom_handler.scale);
 	
 	// selects the two other svgs
 	var other_svgs = los_tres_svgs.filter( function() {
@@ -153,7 +158,9 @@ function do_the_zoom() {
 	if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') { return; }
 	zoom_handler.transform(other_svgs, d3.event.transform);
 	
-	//d3.selectAll("g").attr("transform", d3.event.transform);      //fix this eventually
+	
+	// dealing with the axes
+	d3.selectAll(".axis").call(date_axis.scale(d3.event.transform.rescaleX(date_scale)));
 }
 
 

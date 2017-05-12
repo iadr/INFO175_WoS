@@ -58,6 +58,9 @@ body{
 svg{
 	padding: 10px 30px;
 }
+.axis path{
+    stroke-width: 0;
+}
 .view{
   margin: 1.5%;
   position:relative;
