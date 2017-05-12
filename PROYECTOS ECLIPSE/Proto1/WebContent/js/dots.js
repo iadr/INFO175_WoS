@@ -17,7 +17,8 @@ for (var q = 0; q < 3; q++) {
 		.select("#interface")
 		.append("svg")
 		.attr("width", svg_w)
-		.attr("height", svg_h);
+		.attr("height", svg_h)
+		.attr("id", q);
 	svg_array.push(an_svg);
 }
 
@@ -93,7 +94,7 @@ for (var q = 0; q < 3; q++) {
 }
 
 
-// event handling
+// event handling -- the mouse
 d3.selectAll("svg").selectAll("circle")
 
 	.on("mouseover", function(d) {
@@ -124,21 +125,36 @@ d3.selectAll("svg").selectAll("circle")
 	});
 
 
-//janky zoom/pan
+// ZOOMIN'
 
 // creates the zoom handler
 var zoom_handler = d3.zoom()
 	.on("zoom", do_the_zoom)
 	.scaleExtent([1,10])
-	.translateExtent([[0, 0], [svg_w, svg_h]]);
+	.translateExtent([[0, 0], [svg_w, (svg_h)]]);
+
+//where to listen for zooming
+var los_tres_svgs = d3.select("#interface").selectAll("svg");
+los_tres_svgs.call(zoom_handler);
 
 //	what happens when zoom is triggered
 function do_the_zoom() {
-	  d3.selectAll("circle").attr("transform", d3.event.transform);
-	  //d3.selectAll("g").attr("transform", d3.event.transform);      //fix this eventually
-	}
-
-// tells the zoom handler where to listen
-for (var q = 0; q < 3; q++) {
-	zoom_handler(svg_array[q]);
+	var current_svg = d3.select(this);
+	
+	// transforms all the circles
+	d3.selectAll("circle").attr("transform", d3.event.transform);
+	
+	// selects the two other svgs
+	var other_svgs = los_tres_svgs.filter( function() {
+		return d3.select(this).attr("id") !== current_svg.attr("id");
+	});
+	
+	// breaks a loop of sorts - https://groups.google.com/forum/#!topic/d3-js/_36l7uHNYsQ
+	if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') { return; }
+	zoom_handler.transform(other_svgs, d3.event.transform);
+	
+	//d3.selectAll("g").attr("transform", d3.event.transform);      //fix this eventually
 }
+
+
+
