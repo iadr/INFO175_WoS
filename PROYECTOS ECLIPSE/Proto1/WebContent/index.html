@@ -6,6 +6,7 @@
 	    <title>Global View</title>
 	    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
 	    <link rel="stylesheet" href="css/estilos.css">
+			<link rel="stylesheet" href="css/accordion.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	</head>
  	<body>
@@ -16,16 +17,50 @@
           		<h2>User Name</h2>
           		<h6>@username</h6>
         	</div>
-        		<ul>
-          			<li>
-            			<h4>Filters</h4>
-          			</li>
-          			<li>
-            			<h4>Other Filters</h4>
-          			</li>
-        		</ul>
+					<div class="accordion">
+            <dl>
+              <dt>
+                <a href="#accordion1" aria-expanded="false" aria-controls="accordion1" class="accordion-title accordionTitle js-accordionTrigger">
+									Filters
+								</a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="true">
+								<div class="input-group checkbox">
+		              <input type="checkbox" name="filtros" id="Pars" value="true">
+		              <label for="Pars">Parsons</label>
+								</div>
+								<div class="input-group checkbox">
+		              <input type="checkbox" name="filtros" id="Quiz" value="true">
+		              <label for="Quiz">Quizpet</label>
+								</div>
+								<div class="input-group checkbox">
+		             	<input type="checkbox" name="filtros" id="Ex" value="true">
+		              <label for="Ex">Examples</label>
+								</div>
+								<div class="input-group checkbox">
+									<input type="checkbox" name="filtros" id="AE" value="true">
+		              <label for="AE">Animated Examples</label>
+		            </div>
+              </dd>
+              <dt>
+                <a href="#accordion2" aria-expanded="false" aria-controls="accordion2" class="accordion-title accordionTitle js-accordionTrigger">
+                  Other Filters
+								</a>
+              </dt>
+              <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
+								<div class="input-group radio">
+		              <input type="radio" name="otrosfiltros" id="non" value="true">
+		              <label for="non">None</label>
+								</div>
+								<div class="input-group radio">
+		              <input type="radio" name="otrosfiltros" id="Pretest" value="true">
+		              <label for="Pretest">High-Low PreTest</label>
+		            </div>
+              </dd>
+            </dl>
+          </div>
       	</div>
-      	
+
       	<div id="interface">
         	<!-- <div class="view"> -->
 	        	<style>
@@ -34,11 +69,12 @@
 					  position: absolute;
 					  left: 10px;
 					  top: 10px;
-					}	
+					}
 				</style>
-				
+
 				<script src="https://d3js.org/d3.v4.min.js"></script>
 				<script type="text/javascript" src="js/dots.js"></script>
+				<script src="js/index.js"></script>
         	<!-- </div> -->
      	</div>
   	</body>
