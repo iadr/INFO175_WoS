@@ -36,6 +36,7 @@ var nivel_scale = d3.scaleLinear()
 	.range([svg_h - padding, padding]); //invertido
 	
 var date_axis = d3.axisBottom(date_scale);
+var nivel_axis = d3.axisRight(nivel_scale);
 
 
 // el bucle grande que hace todo para los tres svgs
@@ -50,7 +51,12 @@ for (var q = 0; q < 3; q++) {
 	var dataset = [];
 	for (var i = 0; i < 500; i++) {           				
 		//fecha aleatoria - glitch de meses con menos de 31 dias? 
-	    var la_fecha = new Date(2016, Math.round(Math.random() * 4) + 2, Math.round(Math.random() * 31), Math.round(Math.random() * 23), Math.round(Math.random() * 60), Math.round(Math.random() * 60));
+	    var la_fecha = new Date(2016, 
+	    		Math.round(Math.random() * 4) + 2, 
+	    		Math.round(Math.random() * 31), 
+	    		Math.round(Math.random() * 23), 
+	    		Math.round(Math.random() * 60), 
+	    		Math.round(Math.random() * 60));
 	    var newLevel = Math.round(Math.random() * 30);
 	    var pretest = "hi";
 	    if (Math.random() < .5) {
@@ -89,9 +95,15 @@ for (var q = 0; q < 3; q++) {
 	// dibuja los ejes
 	svg.append("g")
 		.attr("class", "axis")
+		.attr("id", "x_axis")
 		.attr("transform", "translate(0," + (svg_h - padding) + ")")
 		.call(date_axis);
 	
+	svg.append("g")
+		.attr("class", "axis")
+		.attr("id", "y_axis")
+		.attr("transform", "translate(" + (svg_w - padding) + ", 0)")
+		.call(nivel_axis);
 }
 
 
@@ -114,7 +126,7 @@ d3.selectAll("svg").selectAll("circle")
     	// alumno destacado
 		parent_svg.selectAll("." + d[3])
 			.transition()
-      		.attr("r", (dot_radius*1.2)/(Math.sqrt(scale_factor)))						// viejo destacacion con el radio
+      		.attr("r", (dot_radius*1.2)/(Math.sqrt(scale_factor)))	
       		.attr("fill-opacity", .9);
 		
 		var sc = zoom_handler.scale;
@@ -127,7 +139,7 @@ d3.selectAll("svg").selectAll("circle")
 		d3.selectAll("circle")
 			.transition()
 			.delay(100)
-	      	.attr("r", dot_radius/(Math.sqrt(scale_factor)))							// viejo destacacion con el radio
+	      	.attr("r", dot_radius/(Math.sqrt(scale_factor)))
 	    	.attr("fill-opacity", dot_opacity);
 	});
 
@@ -162,15 +174,17 @@ function do_the_zoom() {
 	var other_svgs = los_tres_svgs.filter( function() {
 		return d3.select(this).attr("id") !== current_svg.attr("id");
 	});
-
+	
+	// transforma los ejes
+	d3.selectAll("#x_axis")
+		.call(date_axis.scale(d3.event.transform.rescaleX(date_scale)));
+	d3.selectAll("#y_axis")
+		.call(nivel_axis.scale(d3.event.transform.rescaleY(nivel_scale)));
 	
 	// rompe un tipo de bucle - https://groups.google.com/forum/#!topic/d3-js/_36l7uHNYsQ
 	if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') { return; }
 	zoom_handler.transform(other_svgs, d3.event.transform);
-	
-	
-	// transforma los ejes
-	d3.selectAll(".axis").call(date_axis.scale(d3.event.transform.rescaleX(date_scale)));
+
 }
 
 

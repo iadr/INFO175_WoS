@@ -61,6 +61,9 @@ svg{
 .axis path{
     stroke-width: 0;
 }
+#y_axis{
+    stroke-width: 0;
+}
 .view{
   margin: 1.5%;
   position:relative;
