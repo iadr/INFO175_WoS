@@ -70,6 +70,7 @@
     max-height: 15em;
     -webkit-transition: max-height 0.5s;
     transition: max-height 0.5s;
+    margin-left:5%;
   }
 }
 
