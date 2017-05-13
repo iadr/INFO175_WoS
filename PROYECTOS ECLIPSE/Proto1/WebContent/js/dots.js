@@ -1,11 +1,14 @@
 
 
-// global variables
+// variables globales
 var svg_w = 800;
 var svg_h = 150;
 var padding = 10;
 
 var dot_opacity = .4;
+var dot_radius = 2;
+
+var scale_factor = 1;
 
 
 // hacer SVG elementos
@@ -35,7 +38,7 @@ var nivel_scale = d3.scaleLinear()
 var date_axis = d3.axisBottom(date_scale);
 
 
-// the big loop that makes everything
+// el bucle grande que hace todo para los tres svgs
 for (var q = 0; q < 3; q++) {
 	var svg = svg_array[q];
 	
@@ -45,8 +48,8 @@ for (var q = 0; q < 3; q++) {
 	
 	// dataset aleatorio
 	var dataset = [];
-	for (var i = 0; i < 1000; i++) {           				
-		//random date setup	- will this glitch cuz of months with less than 31 days?
+	for (var i = 0; i < 500; i++) {           				
+		//fecha aleatoria - glitch de meses con menos de 31 dias? 
 	    var la_fecha = new Date(2016, Math.round(Math.random() * 4) + 2, Math.round(Math.random() * 31), Math.round(Math.random() * 23), Math.round(Math.random() * 60), Math.round(Math.random() * 60));
 	    var newLevel = Math.round(Math.random() * 30);
 	    var pretest = "hi";
@@ -63,7 +66,7 @@ for (var q = 0; q < 3; q++) {
 		.data(dataset)
 		.enter()
 		.append("circle")
-		.attr("r", 2) 
+		.attr("r", dot_radius) 
 		.attr("cx", function(d) {
 			return date_scale(d[0]);
 		})
@@ -83,24 +86,22 @@ for (var q = 0; q < 3; q++) {
 		})
 		.attr("fill-opacity", dot_opacity)
 		
-	// draws the axes
+	// dibuja los ejes
 	svg.append("g")
 		.attr("class", "axis")
 		.attr("transform", "translate(0," + (svg_h - padding) + ")")
 		.call(date_axis);
-		//.select("path")
-		//.attr("opacity", "0");	//inelegante
-
+	
 }
 
 
-// event handling -- the mouse
+// event handling -- el raton
 d3.selectAll("svg").selectAll("circle")
 
 	.on("mouseover", function(d) {
 		var parent_svg = d3.select(this.parentNode);
 		
-		// other students fade
+		// otros alumnos se apagan
 		parent_svg.selectAll("circle")
 			.transition()
     		.attr("fill-opacity", function(d2) {
@@ -110,56 +111,65 @@ d3.selectAll("svg").selectAll("circle")
     			else {return dot_opacity};
     		})
 		
-    	// current student destacado
+    	// alumno destacado
 		parent_svg.selectAll("." + d[3])
 			.transition()
-      		.attr("r", 2.5)
+      		.attr("r", (dot_radius*1.2)/(Math.sqrt(scale_factor)))						// viejo destacacion con el radio
       		.attr("fill-opacity", .9);
+		
+		var sc = zoom_handler.scale;
+		console.log(sc);
 		
 	})		
 	
-	// return everyone to normal
+	// regresa todo a normal
 	.on("mouseout", function(d) {
 		d3.selectAll("circle")
 			.transition()
 			.delay(100)
-	      	.attr("r", 2)
+	      	.attr("r", dot_radius/(Math.sqrt(scale_factor)))							// viejo destacacion con el radio
 	    	.attr("fill-opacity", dot_opacity);
 	});
 
 
 // ZOOMIN'
 
-// creates the zoom handler
+// crea el zoom
 var zoom_handler = d3.zoom()
 	.on("zoom", do_the_zoom)
 	.scaleExtent([1,100])
 	.translateExtent([[0, 0], [svg_w, svg_h]]);
 
-//where to listen for zooming
+// donde escuchar el zoom
 var los_tres_svgs = d3.select("#interface").selectAll("svg");
 los_tres_svgs.call(zoom_handler);
 
-//	what happens when zoom is triggered
+// que pasa en el zoom
 function do_the_zoom() {
 	var current_svg = d3.select(this);
+	var el_transform = d3.event.transform;
+	scale_factor = el_transform.scale(1).k;
 	
-	// transforms all the circles
+	// transforma todos los circulos
 	d3.selectAll("circle")
-		.attr("transform", d3.event.transform);
-		//.attr("r", 3/zoom_handler.scale);
+		.attr("transform", el_transform)
+		// mantiene un radio chico
+		.attr("r", function() {
+			return (dot_radius/(Math.sqrt(scale_factor)));
+		});
 	
-	// selects the two other svgs
+	// selecciona los otros svgs
 	var other_svgs = los_tres_svgs.filter( function() {
 		return d3.select(this).attr("id") !== current_svg.attr("id");
 	});
+
 	
-	// breaks a loop of sorts - https://groups.google.com/forum/#!topic/d3-js/_36l7uHNYsQ
+	// rompe un tipo de bucle - https://groups.google.com/forum/#!topic/d3-js/_36l7uHNYsQ
 	if (d3.event.sourceEvent && d3.event.sourceEvent.type === 'zoom') { return; }
 	zoom_handler.transform(other_svgs, d3.event.transform);
 	
 	
-	// dealing with the axes
+	// transforma los ejes
 	d3.selectAll(".axis").call(date_axis.scale(d3.event.transform.rescaleX(date_scale)));
 }
 
