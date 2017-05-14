@@ -28,7 +28,13 @@
   > o individualmente, en el tiempo".
 
 <h3>Semana 1</h3>
-  <p> eligimos un mockup basico </p>
+* Inicio del curso INFO0175 taller de Construcción de Software 
+* Se plantean las siguientes preguntas en el curso:
+  ¿Qué es el proceso de de software?
+  ¿Qué son los requerimientos de software y por qué son importantes?
+  ¿Cuáles son las ideas fundamentales del desarrollo agil?
+  
+  </p>
 <h3>Semana 2</h3>
   <p> mejoramos el mockup </p>
 <h3>Semana 3</h3>
