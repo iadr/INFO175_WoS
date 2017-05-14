@@ -8,6 +8,8 @@ var padding = 10;
 var dot_opacity = .4;
 var dot_radius = 2;
 
+var d_box_opacity = .7;
+
 var scale_factor = 1;
 
 
@@ -139,7 +141,7 @@ d3.selectAll("svg").selectAll("circle")
 			.text(d[3])
 			.transition()
 			.duration(400)
-			.style("opacity", .6);  // OG opacity
+			.style("opacity", d_box_opacity);
 		
 	})		
 	
