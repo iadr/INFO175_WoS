@@ -40,18 +40,15 @@
  
 * Elegimos el primer tipo de visualización para nuestro tranajo del semestre de la pagina d3js.org
   
-  </p>
 <h3>Semana 2</h3>
 
 * Presentamos el mockup que elegimos la semana anterior. 
 * Se reelige el tipo de visualización que vamos a utilizar. Se escoge un un grafico de barras.
-  <p> mejoramos el mockup </p>
+
 <h3>Semana 3</h3>
 
-* Se presenta el nuevo prototipo
-
-* Se nos recomienda utilizar distintos filtros y separar por tópicos, quizás agregar el nivel de actividad, por click y ver tambien la tasa de aprobacion y el tiempo en reolver actividades
-
+* Se presenta el nuevo prototipo.
+* Se nos recomienda utilizar distintos filtros y separar por tópicos, quizás agregar el nivel de actividad, por click y ver tambien la tasa de aprobacion y el tiempo en reolver actividades.
 * Modificaciones al gráfico de barras:
 
   * Ocupar distintos colores y transparencias ( elegir que si los colores son dependientes o independientes)
@@ -60,14 +57,14 @@
   
 <h3>Semana 4</h3>
   <p> presentamos el segundo prototipo </p>
-  <p> Explicando el requerimiento que elegimos las cosas que no debimos hacer en nuestro mockup y como fue que mejoramos la visualización.
-  <p> El feedback que nos dieron fue el siguiente:
-    * Comparar entre gráficos (G1 y G2, G3 y G4, G5 y G6).
-    * Seleccionar si queremos en alto y bajo pretest.
-    * Que mostremos 3 gráficos en pantalla
-    * El mockup tiene que ser lo más explicativo posible.
-    * Mostrar la cantidad de la actividad seleccionada.
-    * Agrupar por semanas o días.
+  <p> Explicando el requerimiento que elegimos las cosas que no debimos hacer en nuestro mockup y como fue que mejoramos la visualización. </p>
+El feedback que nos dieron fue el siguiente:
+* Comparar entre gráficos (G1 y G2, G3 y G4, G5 y G6).
+* Seleccionar si queremos en alto y bajo pretest.
+* Que mostremos 3 gráficos en pantalla
+* El mockup tiene que ser lo más explicativo posible.
+* Mostrar la cantidad de la actividad seleccionada.
+* Agrupar por semanas o días.
     
 <h3>Semana 5</h3>
   <p> </p>
