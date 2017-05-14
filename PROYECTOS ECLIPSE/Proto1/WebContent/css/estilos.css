@@ -55,6 +55,15 @@ body{
   height: 100%;
   background: rgba(0, 0, 0, 0);
 }
+svg{
+	padding: 10px 30px;
+}
+.axis path{
+    stroke-width: 0;
+}
+#y_axis{
+    stroke-width: 0;
+}
 .view{
   margin: 1.5%;
   position:relative;

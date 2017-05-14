@@ -92,6 +92,11 @@ for (var q = 0; q < 3; q++) {
 		})
 		.attr("fill-opacity", dot_opacity)
 		
+	// dialogue box
+	svg.append("text")
+		.attr("id", "dialogue_box")
+		.attr("transform", "translate(5, 15)");
+		
 	// dibuja los ejes
 	svg.append("g")
 		.attr("class", "axis")
@@ -129,18 +134,29 @@ d3.selectAll("svg").selectAll("circle")
       		.attr("r", (dot_radius*1.2)/(Math.sqrt(scale_factor)))	
       		.attr("fill-opacity", .9);
 		
-		var sc = zoom_handler.scale;
-		console.log(sc);
+		// texto
+		parent_svg.selectAll("#dialogue_box")
+			.text(d[3])
+			.transition()
+			.duration(400)
+			.style("opacity", .6);  // OG opacity
 		
 	})		
 	
 	// regresa todo a normal
 	.on("mouseout", function(d) {
+		var parent_svg = d3.select(this.parentNode);
+		
 		d3.selectAll("circle")
 			.transition()
 			.delay(100)
 	      	.attr("r", dot_radius/(Math.sqrt(scale_factor)))
 	    	.attr("fill-opacity", dot_opacity);
+		
+		parent_svg.selectAll("#dialogue_box")
+			.transition()
+			.duration(400)
+			.style("opacity", 0);
 	});
 
 
