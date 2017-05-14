@@ -1,1 +1,1 @@
-Prueba
+Repositorio grupo WoS
