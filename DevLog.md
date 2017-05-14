@@ -56,7 +56,7 @@
   * Utilizar distintas líneas y distintos contenidos como subclasificaciones y separar también por pretest
   
 <h3>Semana 4</h3>
-  <p> presentamos el segundo prototipo </p>
+  <p> Presentamos el segundo prototipo </p>
   <p> Explicando el requerimiento que elegimos las cosas que no debimos hacer en nuestro mockup y como fue que mejoramos la visualización. </p>
   
 El feedback que nos dieron fue el siguiente:
@@ -69,13 +69,20 @@ El feedback que nos dieron fue el siguiente:
 * Agrupar por semanas o días.
     
 <h3>Semana 5</h3>
-  <p> </p>
+  <p>Tercer prototivo, presentacion. </p>
 <h3>Semana 6</h3>
-  <p> re-evaluamos el mockuo original --> figuras de puntas en vez de lineas </p>
+  <p> Re-evaluamos el mockuo original --> figuras de puntas en vez de lineas. </p>
 <h3>Semana 7</h3>
-  <p> construimos un prototipo nuevo
+  <p> Construimos un prototipo nuevo, debido a que el profesor nos vio muy cambiantes con muestra representacion de informacion, NOS SUGIRIO UNO.</p> 
+   
 <h3>Semana 8</h3>
-  <p> reunimos con el profe para reorganizacion de Git y reevaluacion de mockups </p>
+  <p> Reunimos con el profesor para reorganizacion de Git y reevaluacion de mockups. </p>
+  <p> Entre los puntos que vimos fueron: </p>
+  <p><br>* Mockups separados.<br> * Agregar codigo de nuestros avances.<br>* Creación de una carta gantt.<br> * Creacion de una bitacora. </p>
+  
 <h3>Semana 9</h3>
+  <p> Comienzo de trabajo, sobre la base de datos, modificamos nuestras especificaciones de json de acuerdo a nuestro requerimiento.</p>
+  <p>Actualizacion de github, debido a que no se añadio lo avanzado a este.</p>
+<h3>Semana 10</h3>
 
 
