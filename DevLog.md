@@ -58,7 +58,9 @@
 <h3>Semana 4</h3>
   <p> presentamos el segundo prototipo </p>
   <p> Explicando el requerimiento que elegimos las cosas que no debimos hacer en nuestro mockup y como fue que mejoramos la visualización. </p>
+  
 El feedback que nos dieron fue el siguiente:
+
 * Comparar entre gráficos (G1 y G2, G3 y G4, G5 y G6).
 * Seleccionar si queremos en alto y bajo pretest.
 * Que mostremos 3 gráficos en pantalla
