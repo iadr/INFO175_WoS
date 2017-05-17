@@ -97,8 +97,24 @@ for (var q = 0; q < 3; q++) {
 	// dialogue box
 	svg.append("text")
 		.attr("id", "dialogue_box")
-		.attr("transform", "translate(5, 15)");
-		
+		.attr("transform", "translate(5, 15)");	
+	
+	// borders
+	var translucent_borders = svg.append("g")
+		.attr("id", "translucent_borders");
+	
+	translucent_borders.append("rect")
+		.attr("x", -30)
+		.attr("y", -10)
+		.attr("width", 30)
+		.attr("height", 170);
+	
+	translucent_borders.append("rect")
+		.attr("x", 790)
+		.attr("y", -10)
+		.attr("width", 40)
+		.attr("height", 170);
+			
 	// dibuja los ejes
 	svg.append("g")
 		.attr("class", "axis")

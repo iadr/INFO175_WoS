@@ -58,6 +58,10 @@ body{
 svg{
 	padding: 10px 30px;
 }
+#translucent_borders{
+	fill: white;
+	fill-opacity: .8;
+}
 .axis path{
     stroke-width: 0;
 }
