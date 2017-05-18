@@ -98,6 +98,7 @@
 * Nuestro mockup esta en INFO_175/WoS/Mockup2.4.jpg
    
 <h3>Semana 8</h3>
+
 * Reunimos con el profesor para reorganización de Git y reevaluación de mockups. 
 * Entre los puntos que vimos fueron: 
 * Mockups separados. 
@@ -107,6 +108,7 @@
 * Lo sugerido por el profesor esta resumido en una foto que esta en INFO175/Mockups y graficos/resumen-reunion.jpg
 
 <h3>Semana 9</h3>
+
 *  Comienzo de trabajo, sobre en la base de datos.
   * Integración base de datos en mysql.
   * Primeras consultas en mysql para revisar los datos relavantes.
