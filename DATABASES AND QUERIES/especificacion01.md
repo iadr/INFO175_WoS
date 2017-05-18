@@ -47,6 +47,9 @@ where A.`user`=S.userid and
 applabel="parsons" or 
 applabel="animated_example" or 
 applabel="webex");
+
+select userid, pretest_binned, grp 
+from student_info ;
 	
 ```
 ## 
