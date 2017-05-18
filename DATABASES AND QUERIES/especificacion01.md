@@ -20,21 +20,21 @@ No recibe parametros
 
 // USER object:
 {
-  userid: 430, //cantidad de usuarios usando la app: 431, cantidad de alumnos: 684
-  pretest: 0.30, // entre 0 y 1
-  group: "group_162", //Grupo2 
-  pretest_binned: "low" // low/high
+  "userid": 430, //cantidad de usuarios usando la app: 431, cantidad de alumnos: 684
+  "pretest": 0.30, // entre 0 y 1
+  "group": "group_162", //Grupo2 
+  "pretest_binned": "low" // low/high
 }
 
 //ACTIVITY object:
 {
-  Activity:
+  "Activity":
   {
-    userid:123
-    x-axii: 59, //unixtimestamp [septiembre-dic] (int (12))
-    y-axii: 30, /courseorder(int(string(255)))
-    type: "quizpet",
-    result: -1 // -1,0,1 Incorrecto, NN, Correcto
+    "userid":123
+    "x-axii": 59, //unixtimestamp [septiembre-dic] (int (12))
+    "y-axii": 30, /courseorder(int(string(255)))
+    "type": "quizpet",
+    "result": -1 // -1,0,1 Incorrecto, NN, Correcto
   }
 }
 ```
