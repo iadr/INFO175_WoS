@@ -38,12 +38,14 @@
   
   * ¿Cuáles son las ideas fundamentales del desarrollo agil?
  
-* Elegimos el primer tipo de visualización para nuestro tranajo del semestre de la pagina d3js.org
+* Elegimos el primer tipo de visualización para nuestro trabajo del semestre de la pagina d3js.org
   
 <h3>Semana 2</h3>
 
 * Presentamos el mockup que elegimos la semana anterior. 
-* Se reelige el tipo de visualización que vamos a utilizar. Se escoge un un grafico de barras.
+* Se reelige el tipo de visualización que vamos a utilizar. Se escoge un grafico de barras.
+* Esta guardado en nuestro repositorio en la ubicacion INFO175_WoS/mockups y graficos/ con el nombre "mockup 1.0"
+
 
 <h3>Semana 3</h3>
 
@@ -51,15 +53,15 @@
 * Se nos recomienda utilizar distintos filtros y separar por tópicos, quizás agregar el nivel de actividad, por click y ver tambien la tasa de aprobacion y el tiempo en reolver actividades.
 * Modificaciones al gráfico de barras:
 
-  * Ocupar distintos colores y transparencias ( elegir que si los colores son dependientes o independientes)
+* Ocupar distintos colores y transparencias ( elegir que si los colores son dependientes o independientes)
   
-  * Utilizar distintas líneas y distintos contenidos como subclasificaciones y separar también por pretest
+* Utilizar distintas líneas y distintos contenidos como subclasificaciones y separar también por pretest
   
 <h3>Semana 4</h3>
-  <p> Presentamos el segundo prototipo </p>
-  <p> Explicando el requerimiento que elegimos las cosas que no debimos hacer en nuestro mockup y como fue que mejoramos la visualización. </p>
-  
-El feedback que nos dieron fue el siguiente:
+
+* Presentamos el segundo prototipo 
+* Explicando el requerimiento que elegimos las cosas que no debimos hacer en nuestro mockup y como fue que mejoramos la visualización. 
+* El feedback que nos dieron fue el siguiente:
 
 * Comparar entre gráficos (G1 y G2, G3 y G4, G5 y G6).
 * Seleccionar si queremos en alto y bajo pretest.
@@ -69,20 +71,60 @@ El feedback que nos dieron fue el siguiente:
 * Agrupar por semanas o días.
     
 <h3>Semana 5</h3>
-  <p>Tercer prototivo, presentacion. </p>
+* Tercer prototivo, presentación.
+* En este agregamos botones para aplicar los distintos filtros.
+  *Alto y bajo pretest.
+  *quiz
+  *examples.
+* El mockup esta en INFO_175/WoS/Mockups2.1.jpg
+
 <h3>Semana 6</h3>
-  <p> Re-evaluamos el mockuo original --> figuras de puntas en vez de lineas. </p>
+
+* Re-evaluamos el mockuo original --> figuras de puntas en vez de lineas. 
+* Definimos colores, en este caso AZUL, sin una interpretación aun.
+* El mockup de nuestra visualización esta en la carpeta INFO_175/WoS/Mockups2.2.jpg
+* Los consejos que nos dieron fueron:
+  *Debiamos acotar los ejes X e Y.
+  *Por ejemplo en el eje Y definir que serán semanas y estas seran un total de 16.
+
 <h3>Semana 7</h3>
-  <p> Construimos un prototipo nuevo, debido a que el profesor nos vio muy cambiantes con muestra representacion de informacion, NOS SUGIRIO UNO.</p> 
+
+* Presentación de un nuevo mockup en el cual añadimos las tres visualizaciones de datos dentro del layout.
+* Las recomendaciones que nos dieron:
+  *Los grupos fue que debiamos utilizar de mejor manera el espacio de nuestra pagina html.
+  *Definir significados a los colores. 
+* Construimos un prototipo nuevo, debido a que el profesor nos vio muy cambiantes con muestra representacion de informacion, NOS SUGIRIO UNO. 
+* Este consistia en una representacion de puntos, en donde el eje X significaba "Tiempo",este sería el periodo de tiempo en el que se desarrolla el semestre, mientras que el eje Y significa "actividades", aqui estaran todas las actividades realizadas en un semestre.
+* Nuestro mockup esta en INFO_175/WoS/Mockup2.4.jpg
    
 <h3>Semana 8</h3>
-  <p> Reunimos con el profesor para reorganizacion de Git y reevaluacion de mockups. </p>
-  <p> Entre los puntos que vimos fueron: </p>
-  <p><br>* Mockups separados.<br> * Agregar codigo de nuestros avances.<br>* Creación de una carta gantt.<br> * Creacion de una bitacora. </p>
-  
+* Reunimos con el profesor para reorganización de Git y reevaluación de mockups. 
+* Entre los puntos que vimos fueron: 
+* Mockups separados. 
+* Agregar código de nuestros avances.
+* Creación de una carta gantt.
+* Creación de una bítacora. 
+* Lo sugerido por el profesor esta resumido en una foto que esta en INFO175/Mockups y graficos/resumen-reunion.jpg
+
 <h3>Semana 9</h3>
-  <p> Comienzo de trabajo, sobre la base de datos, modificamos nuestras especificaciones de json de acuerdo a nuestro requerimiento.</p>
-  <p>Actualizacion de github, debido a que no se añadio lo avanzado a este.</p>
+*  Comienzo de trabajo, sobre en la base de datos.
+  * Integración base de datos en mysql.
+  * Primeras consultas en mysql para revisar los datos relavantes.
+*  Modificamos nuestras especificaciones de json de acuerdo a nuestro requerimiento.
+*  Actualizacion de github, debido a que no se añadio lo avanzado a este.
+*  Reorganización de github.
+*  Una de las sugerencias que nos dio el profesor, fue comentar el código.
+
 <h3>Semana 10</h3>
 
-
+* Se corrigieron algunos aspectos de nuestro archivo json.
+* Se añadio el feedback del profesor.
+  *Redefinir eje X, initimestamps
+  *Definir eje Y, course order
+* Cada usurario tendra la siguiente información:
+  *Id.
+  *Nivel pretest.
+  *Grupo.
+  *
+* Además no repetir la información en la visualización.
+* Mejoramos la bítacora, añadiendo más información y especificando los mockups.
