@@ -129,3 +129,4 @@
   *  Grupo.
 * Además no repetir la información en la visualización.
 * Mejoramos la bítacora, añadiendo más información y especificando los mockups.
+* acordamos reunion con el profesor,quedo para el dia jueves a las 12:30 y el martes a las 12:00.
