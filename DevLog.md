@@ -54,7 +54,6 @@
 * Modificaciones al gráfico de barras:
 
 * Ocupar distintos colores y transparencias ( elegir que si los colores son dependientes o independientes)
-  
 * Utilizar distintas líneas y distintos contenidos como subclasificaciones y separar también por pretest
   
 <h3>Semana 4</h3>
@@ -75,8 +74,8 @@
 * Tercer prototivo, presentación.
 * En este agregamos botones para aplicar los distintos filtros.
  * Alto y bajo pretest.
- * quiz
- * examples.
+ * Quiz
+ * Examples.
 * El mockup esta en INFO_175/WoS/Mockups2.1.jpg
 
 <h3>Semana 6</h3>
@@ -100,7 +99,7 @@
    
 <h3>Semana 8</h3>
 
-* Reunimos con el profesor para reorganización de Git y reevaluación de mockups. 
+* Nos Reunimos con el profesor para reorganización de Git y reevaluación de mockups. 
 * Entre los puntos que vimos fueron: 
 * Mockups separados. 
 * Agregar código de nuestros avances.
@@ -111,8 +110,8 @@
 <h3>Semana 9</h3>
 
 *  Comienzo de trabajo, sobre en la base de datos.
-  * Integración base de datos en mysql.
-  * Primeras consultas en mysql para revisar los datos relavantes.
+  *  Integración base de datos en mysql.
+  *  Primeras consultas en mysql para revisar los datos relavantes.
 *  Modificamos nuestras especificaciones de json de acuerdo a nuestro requerimiento.
 *  Actualizacion de github, debido a que no se añadio lo avanzado a este.
 *  Reorganización de github.
@@ -122,12 +121,11 @@
 
 * Se corrigieron algunos aspectos de nuestro archivo json.
 * Se añadio el feedback del profesor.
-  *Redefinir eje X, initimestamps
-  *Definir eje Y, course order
+ *  Redefinir eje X, initimestamps
+ *  Definir eje Y, course order
 * Cada usurario tendra la siguiente información:
-  *Id.
-  *Nivel pretest.
-  *Grupo.
-  *
+ *  Id.
+ *  Nivel pretest.
+ *  Grupo.
 * Además no repetir la información en la visualización.
 * Mejoramos la bítacora, añadiendo más información y especificando los mockups.
