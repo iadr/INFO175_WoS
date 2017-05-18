@@ -14,7 +14,7 @@ No recibe parametros
 
 ```javascript
 [
-  STUDENT,
+  Activity_point,
   ...
 ]
 
