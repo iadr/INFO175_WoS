@@ -71,11 +71,12 @@
 * Agrupar por semanas o días.
     
 <h3>Semana 5</h3>
+
 * Tercer prototivo, presentación.
 * En este agregamos botones para aplicar los distintos filtros.
-  *Alto y bajo pretest.
-  *quiz
-  *examples.
+ * Alto y bajo pretest.
+ * quiz
+ * examples.
 * El mockup esta en INFO_175/WoS/Mockups2.1.jpg
 
 <h3>Semana 6</h3>
@@ -84,15 +85,15 @@
 * Definimos colores, en este caso AZUL, sin una interpretación aun.
 * El mockup de nuestra visualización esta en la carpeta INFO_175/WoS/Mockups2.2.jpg
 * Los consejos que nos dieron fueron:
-  *Debiamos acotar los ejes X e Y.
-  *Por ejemplo en el eje Y definir que serán semanas y estas seran un total de 16.
+ * Debiamos acotar los ejes X e Y.
+ * Por ejemplo en el eje Y definir que serán semanas y estas seran un total de 16.
 
 <h3>Semana 7</h3>
 
 * Presentación de un nuevo mockup en el cual añadimos las tres visualizaciones de datos dentro del layout.
 * Las recomendaciones que nos dieron:
-  *Los grupos fue que debiamos utilizar de mejor manera el espacio de nuestra pagina html.
-  *Definir significados a los colores. 
+ * Los grupos fue que debiamos utilizar de mejor manera el espacio de nuestra pagina html.
+ * Definir significados a los colores. 
 * Construimos un prototipo nuevo, debido a que el profesor nos vio muy cambiantes con muestra representacion de informacion, NOS SUGIRIO UNO. 
 * Este consistia en una representacion de puntos, en donde el eje X significaba "Tiempo",este sería el periodo de tiempo en el que se desarrolla el semestre, mientras que el eje Y significa "actividades", aqui estaran todas las actividades realizadas en un semestre.
 * Nuestro mockup esta en INFO_175/WoS/Mockup2.4.jpg
