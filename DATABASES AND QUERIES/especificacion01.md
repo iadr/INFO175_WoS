@@ -32,7 +32,7 @@ No recibe parametros
   {
     "userid":123
     "x-axii": 59, //unixtimestamp [septiembre-dic] (int (12))
-    "y-axii": 30, /courseorder(int(string(255)))
+    "y-axii": 30, //courseorder(int(string(255)))
     "type": "quizpet",
     "result": -1 // -1,0,1 Incorrecto, NN, Correcto
   }
