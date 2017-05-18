@@ -145,3 +145,9 @@
             transform: scale(0.9) rotateX(-60deg);
   }
 }
+.accordion .input-group.checkbox input[type="checkbox"]{
+  display: none;
+}
+.accordion .input-group.radio input[type="radio"]{
+  display: none;
+}
