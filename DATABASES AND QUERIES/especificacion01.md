@@ -38,16 +38,16 @@ No recibe parametros
   }
 }
 ```
-## Consulta SQL
+## Consultas SQL
 ```SQL
-SELECT applabel, A.`user`,S.pretest,A.`group`,
-datestring from activity_traces A,student_info S
-where A.`user`=S.userid and 
-(applabel="quizpet" or 
+//Activity Object
+select S.userid , A.unixtimestamp as 'x-axii', A.courseorder as 'y-axii', A.applabel, A.result 
+from student_info S, activity_traces A 
+where A.`user`=S.userid and (applabel="quizpet" or 
 applabel="parsons" or 
 applabel="animated_example" or 
 applabel="webex");
-
+//User Object
 select userid, pretest_binned, grp 
 from student_info ;
 	
