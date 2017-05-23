@@ -1,4 +1,3 @@
-
 .accordion dl:after,
 .accordion-list:after {
   content: "";
@@ -6,17 +5,14 @@
   height: 1em;
   width: 100%;
 }
-
 .accordion dd,
 .accordion__panel {
   font-size: 1em;
   line-height: 1.5em;
 }
-
 .accordion p {
   padding: 1em 2em 1em 2em;
 }
-
 .accordion {
   position: relative;
 }
@@ -57,7 +53,6 @@
   -webkit-transform: rotate(-225deg);
           transform: rotate(-225deg);
 }
-
 .accordionItem {
   height: auto;
   overflow: hidden;
@@ -73,25 +68,20 @@
     margin-left:5%;
   }
 }
-
 .accordionItem.is-collapsed {
   max-height: 0;
 }
-
 .no-js .accordionItem.is-collapsed {
   max-height: auto;
 }
-
 .animateIn {
   -webkit-animation: accordionIn 0.45s normal ease-in-out both 1;
           animation: accordionIn 0.45s normal ease-in-out both 1;
 }
-
 .animateOut {
   -webkit-animation: accordionOut 0.45s alternate ease-in-out both 1;
           animation: accordionOut 0.45s alternate ease-in-out both 1;
 }
-
 @-webkit-keyframes accordionIn {
   0% {
     opacity: 0;
@@ -106,7 +96,6 @@
             transform: scale(1);
   }
 }
-
 @keyframes accordionIn {
   0% {
     opacity: 0;
@@ -145,9 +134,28 @@
             transform: scale(0.9) rotateX(-60deg);
   }
 }
-.accordion .input-group.checkbox input[type="checkbox"]{
-  display: none;
-}
+.accordion .input-group.checkbox input[type="checkbox"],
 .accordion .input-group.radio input[type="radio"]{
   display: none;
+}
+#PLogo{
+  color: #52ff00;
+}
+#QLogo{
+  color: #fff500;
+}
+#ELogo{
+  color: #ff8200;
+}
+#AELogo{
+  color: #ff0000;
+}
+#NonRadio{
+  color: #0012ff;
+}
+#HighLogo{
+  color: #9600ff;
+}
+#LowLogo{
+  color: #014706;
 }
