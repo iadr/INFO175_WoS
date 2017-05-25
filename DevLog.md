@@ -130,3 +130,8 @@
 * Además no repetir la información en la visualización.
 * Mejoramos la bítacora, añadiendo más información y especificando los mockups.
 * acordamos reunion con el profesor,quedo para el dia jueves a las 12:30 y el martes a las 12:00.
+
+<h3>Semana 11</h3>
+
+* Se cambiaron los checkbox por Radio Buttons.
+* Se agrego la leyenda.
