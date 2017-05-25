@@ -28,19 +28,19 @@
               <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="true">
 								<div class="input-group checkbox">
 		              <input type="checkbox" name="filtros" id="Pars" value="true">
-		              <label for="Pars"><span class="icon-checkbox-unchecked" id="PLogo"></span>Parsons</label>
+		              <span class="icon-checkbox-unchecked box" id="PLogo"><label for="Pars">Parsons</label></span>
 								</div>
 								<div class="input-group checkbox">
 		              <input type="checkbox" name="filtros" id="Quiz" value="true">
-		              <label for="Quiz"><span class="icon-checkbox-unchecked" id="QLogo"></span>Quizpet</label>
+		              <span class="icon-checkbox-unchecked box" id="QLogo"><label for="Quiz">Quizpet</label></span>
 								</div>
 								<div class="input-group checkbox">
 		             	<input type="checkbox" name="filtros" id="Ex" value="true">
-		              <label for="Ex"><span class="icon-checkbox-unchecked" id="ELogo"></span>Examples</label>
+		              <span class="icon-checkbox-unchecked box" id="ELogo"><label for="Ex">Examples</label></span>
 								</div>
 								<div class="input-group checkbox">
 									<input type="checkbox" name="filtros" id="AE" value="true">
-		              <label for="AE"><span class="icon-checkbox-unchecked" id="AELogo"></span>Animated Examples</label>
+		              <span class="icon-checkbox-unchecked box" id="AELogo"><label for="AE">Animated Examples</label></span>
 		            </div>
               </dd>
               <dt>
@@ -51,12 +51,15 @@
               <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
 								<div class="input-group radio">
 		              <input type="radio" name="otrosfiltros" id="non" value="true">
-		              <label for="non"><span class="icon-radio-unchecked" id="NonRadio"></span>None</label>
+		              <span class="icon-radio-unchecked rad" id="NonRadio"><label for="non">None</label></span>
 								</div>
 								<div class="input-group radio">
 		              <input type="radio" name="otrosfiltros" id="Pretest" value="true">
-		              <label for="Pretest"><span class="icon-radio-unchecked" id="HighLogo"></span>
-										<span class="icon-radio-unchecked" id="LowLogo"></span>High-Low PreTest</label>
+		              <span class="icon-radio-unchecked rad" id="HighLogo">
+										<span class="icon-radio-unchecked rad" id="LowLogo">
+											<label for="Pretest">High-Low PreTest</label>
+										</span>
+									</span>
 		            </div>
               </dd>
             </dl>
@@ -77,6 +80,7 @@
 				<script src="https://d3js.org/d3.v4.min.js"></script>
 				<script type="text/javascript" src="js/dots.js"></script>
 				<script src="js/index.js"></script>
+				<script src="js/leyenda.js"></script>
         	<!-- </div> -->
      	</div>
   	</body>

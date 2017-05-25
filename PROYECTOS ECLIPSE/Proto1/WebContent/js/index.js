@@ -8,7 +8,7 @@
 	switchAccordion,
   touchSupported = ('ontouchstart' in window),
   pointerSupported = ('pointerdown' in window);
-  
+
   skipClickDelay = function(e){
     e.preventDefault();
     e.target.click();
@@ -46,7 +46,7 @@ switchAccordion = function(e) {
   	thisQuestion.classList.toggle('is-expanded');
 		thisAnswer.classList.toggle('is-collapsed');
 		thisAnswer.classList.toggle('is-expanded');
- 	
+
   	thisAnswer.classList.toggle('animateIn');
 	};
 	for (var i=0,len=accordionToggles.length; i<len; i++) {
