@@ -135,3 +135,4 @@
 
 * Se cambiaron los checkbox por Radio Buttons.
 * Se agrego la leyenda.
+* se reorganizo el repostorio.
