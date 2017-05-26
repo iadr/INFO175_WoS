@@ -135,4 +135,15 @@
 
 * Se cambiaron los checkbox por Radio Buttons.
 * Se agrego la leyenda.
-* se reorganizo el repostorio.
+* Se reorganizo el repostorio.
+* De la reunión con el profesor se vio lo siguiente:
+  * Ordenar las semanas en la bitacora.
+  * Actualizar la tabla excel(porcentaje).
+  * Estructurar más el codigo y que sea legible.
+  * Añadir en el repositorio el diagrama de funcionabilidad.
+  * Nos recomendo que debiamos mejorar el rendimiento.
+  * Mejorar repositorio, que sea mas intuitivo.
+  * ESTANDIRIZAR LAS TABULACIONES DEL CODIGO.
+  * MEJORAR LA FORMA DE CARGAR EL JAVASCRIPT.
+  * Actualizar las consultas.
+* La siguiente semana de presenta nuestro avance.
