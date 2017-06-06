@@ -147,3 +147,11 @@
   * MEJORAR LA FORMA DE CARGAR EL JAVASCRIPT.
   * Actualizar las consultas.
 * La siguiente semana de presenta nuestro avance.
+
+<h3> Semana 12 </h3>
+
+* Elaboración Presentación avance del proyecto.
+* Modificación archivo index.h
+  * Se cambió el orden de los scripts.
+* Creación de archivo index.js
+
