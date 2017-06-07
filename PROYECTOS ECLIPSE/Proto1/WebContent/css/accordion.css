@@ -43,7 +43,6 @@
 .accordion__Heading:hover {
   background-color: rgba(111, 0, 0, 0.71);
 }
-
 .accordionTitleActive,
 .accordionTitle.is-expanded {
   background-color: rgba(111, 0, 0, 0.71);
@@ -59,7 +58,7 @@
   max-height: 50em;
   -webkit-transition: max-height 1s;
   transition: max-height 1s;
-}
+}/*Transiciones y Animaciones*/
 @media screen and (min-width: 48em) {
   .accordionItem {
     max-height: 15em;
@@ -134,10 +133,11 @@
             transform: scale(0.9) rotateX(-60deg);
   }
 }
-.accordion .input-group.checkbox input[type="checkbox"],
-.accordion .input-group.radio input[type="radio"]{
+.accordion .input-group.checkbox input[type="checkbox"]/* sin estilos checkbox */
+{
   display: none;
 }
+/*colores*/
 #PLogo{
   color: #52ff00;
 }
@@ -158,6 +158,7 @@
 }
 #LowLogo{
   color: #014706;
+  margin-left: 0;
 }
 label{
   color: #cccccc;

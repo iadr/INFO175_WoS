@@ -1,79 +1,76 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-	    <meta charset="utf-8">
-	    <title>Global View</title>
-	    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
-			<link rel="stylesheet" href="fonts/style.css">
-	    <link rel="stylesheet" href="css/estilos.css">
-			<link rel="stylesheet" href="css/accordion.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-			<script type="text/javascript" src="js/index.js"></script>
-			<script src="https://d3js.org/d3.v4.min.js"></script>
-
-	</head>
- 	<body>
-     	<div id="sidebar">
-        	<h4 id="top">WoS View 1.0.2</h4>
-        	<div id="profile">
-          		<img src="images/WoS.png" id="profileimg">
-          		<h2>User Name</h2>
-          		<h6>@username</h6>
-        	</div>
-					<div class="accordion">
+  <head>
+      <meta charset="utf-8">
+      <title>Global View</title>
+      <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark" rel="stylesheet">
+      <link rel="stylesheet" href="fonts/style.css">
+      <link rel="stylesheet" href="css/estilos.css">
+      <link rel="stylesheet" href="css/accordion.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+   <body>
+       <div id="sidebar">
+          <h4 id="top">WoS View 1.0.2</h4>
+          <div id="profile">
+              <img src="images/WoS.png" id="profileimg">
+              <h2>User Name</h2>
+              <h6>@username</h6>
+          </div>
+          <div class="accordion">
             <dl>
               <dt>
                 <a href="#accordion1" aria-expanded="false" aria-controls="accordion1" class="accordion-title accordionTitle js-accordionTrigger">
-									Filters
-								</a>
+                  Filters
+                </a>
               </dt>
               <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="true">
-								<div class="input-group checkbox">
-		              <input type="checkbox" name="filtros" id="Pars" value="true">
-		              <span class="icon-checkbox-unchecked box" id="PLogo"><label for="Pars">Parsons</label></span>
-								</div>
-								<div class="input-group checkbox">
-		              <input type="checkbox" name="filtros" id="Quiz" value="true">
-		              <span class="icon-checkbox-unchecked box" id="QLogo"><label for="Quiz">Quizpet</label></span>
-								</div>
-								<div class="input-group checkbox">
-		             	<input type="checkbox" name="filtros" id="Ex" value="true">
-		              <span class="icon-checkbox-unchecked box" id="ELogo"><label for="Ex">Examples</label></span>
-								</div>
-								<div class="input-group checkbox">
-									<input type="checkbox" name="filtros" id="AE" value="true">
-		              <span class="icon-checkbox-unchecked box" id="AELogo"><label for="AE">Animated Examples</label></span>
-		            </div>
+                <div class="input-group checkbox">
+                  <input type="checkbox" name="filtros" id="Pars" value="true">
+                  <span class="icon-checkbox-unchecked box" id="PLogo"><label for="Pars">Parsons</label></span>
+                </div>
+                <div class="input-group checkbox">
+                  <input type="checkbox" name="filtros" id="Quiz" value="true">
+                  <span class="icon-checkbox-unchecked box" id="QLogo"><label for="Quiz">Quizpet</label></span>
+                </div>
+                <div class="input-group checkbox">
+                   <input type="checkbox" name="filtros" id="Ex" value="true">
+                  <span class="icon-checkbox-unchecked box" id="ELogo"><label for="Ex">Examples</label></span>
+                </div>
+                <div class="input-group checkbox">
+                  <input type="checkbox" name="filtros" id="AE" value="true">
+                  <span class="icon-checkbox-unchecked box" id="AELogo"><label for="AE">Animated Examples</label></span>
+                </div>
               </dd>
               <dt>
                 <a href="#accordion2" aria-expanded="false" aria-controls="accordion2" class="accordion-title accordionTitle js-accordionTrigger">
                   Other Filters
-								</a>
+                </a>
               </dt>
               <dd class="accordion-content accordionItem is-collapsed" id="accordion2" aria-hidden="true">
-								<div class="input-group radio">
-		              <input type="radio" name="otrosfiltros" id="non" value="true">
-		              <span class="icon-radio-unchecked rad" id="NonRadio"><label for="non">None</label></span>
-								</div>
-								<div class="input-group radio">
-		              <input type="radio" name="otrosfiltros" id="Pretest" value="true">
-		              <span class="icon-radio-unchecked rad" id="HighLogo">
-										<span class="icon-radio-unchecked rad" id="LowLogo">
-											<label for="Pretest">High-Low PreTest</label>
-										</span>
-									</span>
-		            </div>
+                <div class="input-group radio">
+                  <div>
+                    <input type="radio" name="otrosfiltros" id="non" value="true">
+                  <label for="non"><span class="icon-radio-checked2 rad" id="NonRadio"></span>None</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="otrosfiltros" id="Pretest" value="true">
+                      <label for="Pretest">
+                          <span class="icon-radio-checked2 rad" id="HighLogo"></span>
+                          <span class="icon-radio-checked2 rad" id="LowLogo"></span>High-Low PreTest</label>
+                  </div>
+                  </div>
               </dd>
             </dl>
           </div>
-      	</div>
-
-      	<div id="interface">
-        	<!-- <div class="view"> -->
-
-				<script type="text/javascript" src="js/dots.js"></script>
-        	<!-- </div> -->
-     	</div>
-  	</body>
+        </div>
+        <div id="interface">
+          <!-- <div class="view"> -->
+        <script type="text/javascript" src="js/dots.js"></script>
+          <!-- </div> -->
+       </div>
+    </body>
 </html>
