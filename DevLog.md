@@ -155,3 +155,20 @@
   * Se cambió el orden de los scripts.
 * Creación de archivo index.js
 
+<h3> Semana 13 </h3>
+
+* Definir color (high,low,pretest).
+* Destacar puntos de estudiantes(Highlight).
+* Mouse over.
+* Codigo zoom.
+* Implementar filtros.
+* Falta añadir leyenda de la transparencia.
+* El feedblack que nos dieron fue:
+  * Distinguir grupos.
+  * Distinguir los colores.
+  * Distinguir la altura por topicos (optativo).
+  * Que la opacidad represente nivel de actividad.
+  * Agregar leyenda.
+  * Ordenar código.
+  * Como agrupar: por estudiante y topico, sesion y topico.
+  
