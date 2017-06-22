@@ -89,7 +89,8 @@ public class GetSampleData extends HttpServlet {
 		String outString = "[";
 		for(String[] row : data){
 			System.out.print(".");
-			outString += "\n {\"grupo\":\""+row[0]+"\",\"usuario\":\""+row[1]+"\",\"session\":"+row[2]+",\"topicname\":\""+row[3]+"\",\"topicorder\":"+row[4]+",\"quizpet_att\":"+row[5]+",\"total_act\":"+row[6]+"},";
+			if(row[7].length()==0) row[7]="0";
+			outString += "\n {\"grupo\":\""+row[0]+"\",\"usuario\":\""+row[1]+"\",\"session\":"+row[2]+",\"topicname\":\""+row[3]+"\",\"topicorder\":"+row[4]+",\"quizpet_att\":"+row[5]+",\"total_act\":"+row[6]+",\"Pretest\":"+row[7]+"},";
 		}
 		System.out.println("Finishing JSON conversion");
 		outString = outString.substring(0,outString.length()-1);
