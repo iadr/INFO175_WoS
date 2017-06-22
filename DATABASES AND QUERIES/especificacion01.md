@@ -41,15 +41,24 @@ No recibe parametros
 ## Consultas SQL
 ```SQL
 //Activity Object
-select S.userid , A.unixtimestamp as 'x-axii', A.courseorder as 'y-axii', A.applabel, A.result 
+select S.userid , A.unixtimestamp as 'x-axii', A.courseorder as 'y-axii', A.applabel, A.result
 from student_info S, activity_traces A 
 where A.`user`=S.userid and (applabel="quizpet" or 
 applabel="parsons" or 
 applabel="animated_example" or 
 applabel="webex");
+
 //User Object
 select userid, pretest_binned, grp 
 from student_info ;
+
+//Activity + user Object
+select S.userid , A.unixtimestamp as 'x-axii', A.courseorder as 'y-axii', A.applabel, A.result, S.pretest_binned, S.grp 
+from student_info S, activity_traces A 
+where A.`user`=S.userid and (applabel="quizpet" or 
+applabel="parsons" or 
+applabel="animated_example" or 
+applabel="webex");
 	
 ```
 ## 
