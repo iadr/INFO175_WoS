@@ -95,9 +95,13 @@ for (var q = 0; q < 3; q++) {
 		.attr("fill-opacity", dot_opacity)
 		
 	// dialogue box
+	var names = ["groups 1 & 2", "groups 3 & 4", "groups 5 & 6"];
+	
 	svg.append("text")
 		.attr("id", "dialogue_box")
-		.attr("transform", "translate(5, 15)");	
+		.attr("transform", "translate(5, 15)")
+		.style("opacity", d_box_opacity)
+		.text(names[q]);
 	
 	// borders
 	var translucent_borders = svg.append("g")
@@ -153,11 +157,12 @@ d3.selectAll("svg").selectAll("circle")
       		.attr("fill-opacity", .9);
 		
 		// texto
-		parent_svg.selectAll("#dialogue_box")
+		/* parent_svg.selectAll("#dialogue_box")
 			.text(d[3])
 			.transition()
 			.duration(400)
 			.style("opacity", d_box_opacity);
+		*/
 		
 	})		
 	
@@ -171,10 +176,12 @@ d3.selectAll("svg").selectAll("circle")
 	      	.attr("r", dot_radius/(Math.sqrt(scale_factor)))
 	    	.attr("fill-opacity", dot_opacity);
 		
-		parent_svg.selectAll("#dialogue_box")
+		// texto
+		/* parent_svg.selectAll("#dialogue_box")
 			.transition()
 			.duration(400)
 			.style("opacity", 0);
+		*/
 	});
 
 
