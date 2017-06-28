@@ -9,7 +9,7 @@ import org.w3c.dom.Document;
  * Esta clase permite leer datos de un archivo .xml usando el parser de xml 
  * de la API de java en javax.xml.parsers
  *  
- * @author Julio Guerra
+ * 
  *
  */
 public class ConfigManager {

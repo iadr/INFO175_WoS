@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class GetSampleData
+ * Servlet implementation class GetData
  * 
  * Ver el método doGet
  */
-@WebServlet("/GetSampleData")
-public class GetSampleData extends HttpServlet {
+@WebServlet("/GetData")
+public class GetData extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private DBInterface dbInterface; // dbInterface es para conectarse a la base de datos
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetSampleData() {
+    public GetData() {
         super();
     }
 
@@ -58,8 +58,8 @@ public class GetSampleData extends HttpServlet {
 		dbInterface = new DBInterface(cm.dbString, cm.dbUser, cm.dbPass);
 		dbInterface.openConnection(); // abrir la conexión
 		
-		// llamada a la función getSampleData que hace la consulta a la base de datos
-		ArrayList<String[]> data = dbInterface.getSampleData(); 
+		// llamada a la función getData que hace la consulta a la base de datos
+		ArrayList<String[]> data = dbInterface.getData(); 
 		dbInterface.closeConnection(); // cerrar la conexión
 		
 		// obtener el objeto flujo de salida (para imprimir la respuesta)
@@ -89,8 +89,8 @@ public class GetSampleData extends HttpServlet {
 		String outString = "[";
 		for(String[] row : data){
 			System.out.print(".");
-			if(row[7].length()==0) row[7]="0";
-			outString += "\n {\"grupo\":\""+row[0]+"\",\"usuario\":\""+row[1]+"\",\"session\":"+row[2]+",\"topicname\":\""+row[3]+"\",\"topicorder\":"+row[4]+",\"quizpet_att\":"+row[5]+",\"total_act\":"+row[6]+",\"Pretest\":"+row[7]+"},";
+			if(row[7].length()==0) row[7]="1";
+			outString += "\n {\"grupo\":\""+row[0]+"\",\"usuario\":\""+row[1]+"\",\"session\":"+row[2]+",\"topicname\":\""+row[3]+"\",\"topicorder\":"+row[4]+",\"quizpet_att\":"+row[5]+",\"total_act\":"+row[6]+",\"Pretest\":"+row[7]+",\"Time\":"+row[8]+"},";
 		}
 		System.out.println("Finishing JSON conversion");
 		outString = outString.substring(0,outString.length()-1);

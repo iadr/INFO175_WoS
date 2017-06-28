@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Esta clase implementa metodos de conexión y consula a una base de datos.
  * 
- * @author Julio Guerra
+ * 
  *
  */
 public class DBInterface {
@@ -73,20 +73,22 @@ public class DBInterface {
 	 * (esta es una consulta de pruebas, que sólo trae información parcial
 	 * @return
 	 */
-	public ArrayList<String[]> getSampleData() {
+	public ArrayList<String[]> getData() {
 		try {
 			ArrayList<String[]> res = new ArrayList<String[]>();
 			stmt = conn.createStatement();
-			String query = "select `group`,`user`,`session`,`topicname`,topicorder,sum(if(appid=41,1,0)) as quizpet_att,"
-+"sum(if(appid=41 AND result=1,1,0)) as quizpet_correct_att,"
-+"count(*) as totalact,pretest_binned " 
-+"from activity_traces join student_info on activity_traces.`user`=student_info.userid where appid>0  group by `user`, `session`, `topicname`,`group`,topicorder;";
+			String query = "select `group`,`user`,`session`,`topicname`,topicorder,sum(if(appid=41,1,0)) as quizpet_att, "
+					+ " sum(if(appid=41 AND result=1,1,0)) as quizpet_correct_att,"
+					+ " count(*) as totalact,pretest_binned, round(avg(unixtimestamp),0) as time"
+					+ " from activity_traces join student_info on activity_traces.`user`=student_info.userid "
+					+ " where appid>0 "
+					+ " group by `user`, `session`, `topicname`,`group`,topicorder;";
 			rs = stmt.executeQuery(query);
 			System.out.println(query);
 			// rs contiene una estructura de tipo SET que contiene todas
 			// las filas de la respuesta de la base de datos
 			while (rs.next()) {
-				String[] dataPoint = new String[8];
+				String[] dataPoint = new String[9];
 				dataPoint[0] = rs.getString("group"); // rs.getString obtiene el valor String de un campo especifico consultado, en este caso el campo "user". Notar que este nombre de campodebe coincidir con los campos en la consulta (SELECT `user`, ...) 
 				dataPoint[1] = rs.getString("user");
 				dataPoint[2] = rs.getString("session");
@@ -95,6 +97,7 @@ public class DBInterface {
 				dataPoint[5] = rs.getString("quizpet_att");
 				dataPoint[6] = rs.getString("totalact");
 				dataPoint[7] = rs.getString("pretest_binned");
+				dataPoint[8]=  rs.getString("time");
 				res.add(dataPoint);
 				
 			}
