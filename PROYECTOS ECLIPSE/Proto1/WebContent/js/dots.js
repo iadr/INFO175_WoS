@@ -1,9 +1,18 @@
 // wooooohooo
+var ig=0;
+var datar=[]
+  function lee_json() {
+    $.getJSON("data.json",function(data){
 
+//data tiene los elementos de data.json
+//ejemplo de acceso a data
+//data[0].usuario ->return noname160005
 // variables globales
 var svg_w = 800;
 var svg_h = 150;
 var padding = 10;
+
+
 
 var dot_opacity = .4;
 var dot_radius = 2;
@@ -51,7 +60,7 @@ for (var q = 0; q < 3; q++) {
 	
 	// dataset aleatorio
 	var dataset = [];
-	for (var i = 0; i < 500; i++) {           				
+	for (var i = 0; i < data.length; i++) {           				
 		//fecha aleatoria - glitch de meses con menos de 31 dias? 
 	    var la_fecha = new Date(2016, 
 	    		Math.round(Math.random() * 4) + 2, 
@@ -227,6 +236,7 @@ function do_the_zoom() {
 	zoom_handler.transform(other_svgs, d3.event.transform);
 
 }
-
-
+    }); 
+}
+lee_json();
 
