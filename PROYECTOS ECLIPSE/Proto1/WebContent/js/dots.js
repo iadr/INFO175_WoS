@@ -8,15 +8,12 @@ var datar=[]
 //ejemplo de acceso a data
 //data[0].usuario ->return noname160005
 // variables globales
-var svg_w = 800;
+var svg_w = 900;
 var svg_h = 150;
 var padding = 10;
 
-
-
 var dot_opacity = .4;
 var dot_radius = 2;
-
 var d_box_opacity = .7;
 
 var scale_factor = 1;
@@ -24,8 +21,13 @@ var scale_factor = 1;
 
 // hacer SVG elementos
 
-var svg_array = []
+d3.select("body")
+	.select("#interface")
+	.append("svg")
+	.attr("width", svg_w)
+	.attr("height", 1);
 
+var svg_array = []
 for (var q = 0; q < 3; q++) {
 	var an_svg = d3.select("body")
 		.select("#interface")
@@ -35,6 +37,14 @@ for (var q = 0; q < 3; q++) {
 		.attr("id", q);
 	svg_array.push(an_svg);
 }
+
+var legend = d3.select("body")
+	.select("#interface")
+	.append("svg")
+	.attr("width", svg_w)
+	.attr("height", 10);
+
+legend.append("circle");
 
 //escalas de fecha y nivel
 
@@ -47,11 +57,18 @@ var nivel_scale = d3.scaleLinear()
 	.range([svg_h - padding, padding]); //invertido
 
 var activity_contained_scale = d3.scaleLinear()
-	.domain([0, 200])
+	.domain([0, 169])
 	.range([1, 5]);
 	
 var date_axis = d3.axisBottom(date_scale);
-var nivel_axis = d3.axisRight(nivel_scale);
+
+var nivel_names = ["variables", "", "comparisons", "if statements", "logical operators", 
+	"loops", "output formatting", "functions", "lists", "strings", "dictionary", 
+	"values references", "exceptions", "file handling", "classes & objects"]; 
+var nivel_axis = d3.axisRight(nivel_scale)
+	.tickFormat(function(i) {
+		return nivel_names[i-1];
+	});
 
 	    
 // el bucle grande que hace todo para los tres svgs	    
@@ -78,25 +95,7 @@ for (var q = 0; q < 3; q++) {
 	    dataset.push([la_fecha, newLevel, pretest, studentID, activity_contained]);	    
 	}
 	
-	/* var dataset = [];
-	for (var i = 0; i < data.length; i++) {           				
-		//fecha aleatoria - glitch de meses con menos de 31 dias? 
-	    var la_fecha = new Date(2016, 
-	    		Math.round(Math.random() * 4) + 2, 
-	    		Math.round(Math.random() * 31), 
-	    		Math.round(Math.random() * 23), 
-	    		Math.round(Math.random() * 60), 
-	    		Math.round(Math.random() * 60));
-	    var newLevel = Math.round(Math.random() * 30);
-	    var pretest = "hi";
-	    if (Math.random() < .5) {
-	    	pretest = "lo";
-	    }
-	    var student_array = ["s0","s1","s2","s3","s4","s5","s6","s7","s8","s9","s10"]
-	    var studentID = student_array[Math.round(Math.random() * 9)];
-	    dataset.push([la_fecha, newLevel, pretest, studentID]);	    
-	} */
-	
+
 	// hacer los puntos(circulos)
 	var points = svg.selectAll("circle")
 		.data(dataset)
@@ -144,9 +143,9 @@ for (var q = 0; q < 3; q++) {
 		.attr("height", 170);
 	
 	translucent_borders.append("rect")
-		.attr("x", 790)
+		.attr("x", svg_w - 50)
 		.attr("y", -10)
-		.attr("width", 40)
+		.attr("width", 100)
 		.attr("height", 170);
 			
 	// dibuja los ejes
@@ -159,7 +158,7 @@ for (var q = 0; q < 3; q++) {
 	svg.append("g")
 		.attr("class", "axis")
 		.attr("id", "y_axis")
-		.attr("transform", "translate(" + (svg_w - padding) + ", 0)")
+		.attr("transform", "translate(" + (svg_w - padding - 40) + ", 0)")
 		.call(nivel_axis);
 }
 
@@ -257,6 +256,7 @@ function do_the_zoom() {
 	zoom_handler.transform(other_svgs, d3.event.transform);
 
 }
+
     }); 
 }
 lee_json();

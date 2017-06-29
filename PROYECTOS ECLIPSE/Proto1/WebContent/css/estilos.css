@@ -62,11 +62,15 @@ svg{
 	fill: white;
 	fill-opacity: .8;
 }
+.axis { 
+	 
+}
 .axis path{
     stroke-width: 0;
 }
 #y_axis{
     stroke-width: 0;
+    font-size: 8px;
 }
 .view{
   margin: 1.5%;
