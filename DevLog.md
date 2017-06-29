@@ -173,6 +173,7 @@
   * Como agrupar: por estudiante y topico, sesion y topico.
   
 <h3> Semana 14 </h3>
+
 * Conectar los datos!
 * El feedblack que nos dio el profesor en la reunion que tuvimos fue:
   * Modificar la especificación.
