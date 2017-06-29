@@ -90,7 +90,7 @@ public class GetData extends HttpServlet {
 		for(String[] row : data){
 			System.out.print(".");
 			if(row[7].length()==0) row[7]="1";
-			outString += "\n {\"grupo\":\""+row[0]+"\",\"usuario\":\""+row[1]+"\",\"session\":"+row[2]+",\"topicname\":\""+row[3]+"\",\"topicorder\":"+row[4]+",\"quizpet_att\":"+row[5]+",\"total_act\":"+row[6]+",\"Pretest\":"+row[7]+",\"Time\":"+row[8]+"},";
+			outString += "\n {\"grupo\":"+row[0].substring(row[0].length() - 1)+",\"usuario\":\""+row[1]+"\",\"session\":"+row[2]+",\"topicname\":\""+row[3]+"\",\"topicorder\":"+row[4]+",\"quizpet_att\":"+row[5]+",\"total_act\":"+row[6]+",\"Pretest\":"+row[7]+",\"Time\":"+row[8]+"},";
 		}
 		System.out.println("Finishing JSON conversion");
 		outString = outString.substring(0,outString.length()-1);
