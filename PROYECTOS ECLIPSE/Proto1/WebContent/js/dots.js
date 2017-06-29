@@ -1,4 +1,4 @@
-// wooooohooo
+
 var ig=0;
 var datar=[]
   function lee_json() {
@@ -39,12 +39,16 @@ for (var q = 0; q < 3; q++) {
 //escalas de fecha y nivel
 
 var date_scale = d3.scaleTime()
-	.domain([new Date(2016, 2, 1), new Date(2016, 7, 1)]) //build this off of actual dates perhaps?
+	.domain([new Date(2016, 8, 20), new Date(2016, 11, 20)])
     .range([padding, svg_w - padding]);
 
 var nivel_scale = d3.scaleLinear()
-	.domain([0, 30])	//domain de nivel
+	.domain([0, 15])	//domain de nivel
 	.range([svg_h - padding, padding]); //invertido
+
+var activity_contained_scale = d3.scaleLinear()
+	.domain([0, 200])
+	.range([1, 5]);
 	
 var date_axis = d3.axisBottom(date_scale);
 var nivel_axis = d3.axisRight(nivel_scale);
@@ -52,30 +56,26 @@ var nivel_axis = d3.axisRight(nivel_scale);
 	    
 // el bucle grande que hace todo para los tres svgs	    
 for (var q = 0; q < 3; q++) {
+	
 	var svg = svg_array[q];
 	
 	// filter grupos
 	group_data = [];
 	for (var i = 0; i < data.length; i++) {
-		if (data[i].grupo == 1 || data[i].grupo == 2)
+		if (data[i].grupo == 2*q+1 || data[i].grupo == 2*q+2) 
 		group_data.push(data[i]);
 	}
 	
-	//test filter
-	console.log(group_data.length);
 	
 	var dataset = [];
 	for (var i = 0; i < group_data.length; i++) {           				
-		//fecha aleatoria - glitch de meses con menos de 31 dias? 
-	    var la_fecha = group_data[i];
-	    var newLevel = Math.round(Math.random() * 30);
-	    var pretest = "hi";
-	    if (Math.random() < .5) {
-	    	pretest = "lo";
-	    }
-	    var student_array = ["s0","s1","s2","s3","s4","s5","s6","s7","s8","s9","s10"]
-	    var studentID = student_array[Math.round(Math.random() * 9)];
-	    dataset.push([la_fecha, newLevel, pretest, studentID]);	    
+	    var la_fecha = new Date(group_data[i].Time*1000);
+	    var newLevel = group_data[i].topicorder;
+	    var pretest = group_data[i].Pretest;
+	    var studentID = group_data[i].usuario;
+	    var activity_contained = group_data[i].total_act;
+	    console.log(group_data[i].total_act);
+	    dataset.push([la_fecha, newLevel, pretest, studentID, activity_contained]);	    
 	}
 	
 	/* var dataset = [];
@@ -102,7 +102,9 @@ for (var q = 0; q < 3; q++) {
 		.data(dataset)
 		.enter()
 		.append("circle")
-		.attr("r", dot_radius) 
+		.attr("r", function(d) {
+			return dot_radius * activity_contained_scale(d[4]);
+		})
 		.attr("cx", function(d) {
 			return date_scale(d[0]);
 		})
@@ -110,7 +112,7 @@ for (var q = 0; q < 3; q++) {
 			return nivel_scale(d[1]);
 		})
 		.attr("fill", function(d) {
-			if (d[2] == "hi") {
+			if (d[2] == 2) {
 				return "red";
 			}
 			else {
@@ -173,7 +175,7 @@ d3.selectAll("svg").selectAll("circle")
 			.transition()
     		.attr("fill-opacity", function(d2) {
     			if (d[3] != d2[3]) {
-    				return dot_opacity*.4;
+    				return dot_opacity*.3;
     			}
     			else {return dot_opacity};
     		})
@@ -181,7 +183,7 @@ d3.selectAll("svg").selectAll("circle")
     	// alumno destacado
 		parent_svg.selectAll("." + d[3])
 			.transition()
-      		.attr("r", (dot_radius*1.2)/(Math.sqrt(scale_factor)))	
+      		//.attr("r", (dot_radius*1.2)/(Math.sqrt(scale_factor)))	
       		.attr("fill-opacity", .9);
 		
 		// texto
@@ -201,7 +203,7 @@ d3.selectAll("svg").selectAll("circle")
 		d3.selectAll("circle")
 			.transition()
 			.delay(100)
-	      	.attr("r", dot_radius/(Math.sqrt(scale_factor)))
+	      	//.attr("r", dot_radius/(Math.sqrt(scale_factor)))
 	    	.attr("fill-opacity", dot_opacity);
 		
 		// texto
@@ -235,8 +237,8 @@ function do_the_zoom() {
 	d3.selectAll("circle")
 		.attr("transform", el_transform)
 		// mantiene un radio chico
-		.attr("r", function() {
-			return (dot_radius/(Math.sqrt(scale_factor)));
+		.attr("r", function(d) {
+			return (activity_contained_scale(d[4]) * dot_radius/(Math.sqrt(scale_factor)));
 		});
 	
 	// selecciona los otros svgs
