@@ -49,17 +49,36 @@ var nivel_scale = d3.scaleLinear()
 var date_axis = d3.axisBottom(date_scale);
 var nivel_axis = d3.axisRight(nivel_scale);
 
-
-// el bucle grande que hace todo para los tres svgs
+	    
+// el bucle grande que hace todo para los tres svgs	    
 for (var q = 0; q < 3; q++) {
 	var svg = svg_array[q];
 	
-	//input ejemplos
-	//2016-12-01 15:19:10.0
-	//2016-11-30 14:38:21.0
+	// filter grupos
+	group_data = [];
+	for (var i = 0; i < data.length; i++) {
+		if (data[i].grupo == 1 || data[i].grupo == 2)
+		group_data.push(data[i]);
+	}
 	
-	// dataset aleatorio
+	//test filter
+	console.log(group_data.length);
+	
 	var dataset = [];
+	for (var i = 0; i < group_data.length; i++) {           				
+		//fecha aleatoria - glitch de meses con menos de 31 dias? 
+	    var la_fecha = group_data[i];
+	    var newLevel = Math.round(Math.random() * 30);
+	    var pretest = "hi";
+	    if (Math.random() < .5) {
+	    	pretest = "lo";
+	    }
+	    var student_array = ["s0","s1","s2","s3","s4","s5","s6","s7","s8","s9","s10"]
+	    var studentID = student_array[Math.round(Math.random() * 9)];
+	    dataset.push([la_fecha, newLevel, pretest, studentID]);	    
+	}
+	
+	/* var dataset = [];
 	for (var i = 0; i < data.length; i++) {           				
 		//fecha aleatoria - glitch de meses con menos de 31 dias? 
 	    var la_fecha = new Date(2016, 
@@ -76,7 +95,7 @@ for (var q = 0; q < 3; q++) {
 	    var student_array = ["s0","s1","s2","s3","s4","s5","s6","s7","s8","s9","s10"]
 	    var studentID = student_array[Math.round(Math.random() * 9)];
 	    dataset.push([la_fecha, newLevel, pretest, studentID]);	    
-	}
+	} */
 	
 	// hacer los puntos(circulos)
 	var points = svg.selectAll("circle")
