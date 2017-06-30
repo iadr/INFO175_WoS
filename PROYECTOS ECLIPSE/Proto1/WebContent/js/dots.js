@@ -7,8 +7,9 @@ var datar=[]
 //data tiene los elementos de data.json
 //ejemplo de acceso a data
 //data[0].usuario ->return noname160005
+    	
 // variables globales
-var svg_w = 900;
+var svg_w = 850;
 var svg_h = 150;
 var padding = 10;
 
@@ -20,7 +21,6 @@ var scale_factor = 1;
 
 
 // hacer SVG elementos
-
 d3.select("body")
 	.select("#interface")
 	.append("svg")
@@ -34,19 +34,78 @@ for (var q = 0; q < 3; q++) {
 		.append("svg")
 		.attr("width", svg_w)
 		.attr("height", svg_h)
+		.attr("class", "graphs")
 		.attr("id", q);
 	svg_array.push(an_svg);
 }
 
+// maybe make 3 separate svgs?
+//legend
 var legend = d3.select("body")
 	.select("#interface")
 	.append("svg")
 	.attr("width", svg_w)
-	.attr("height", 10);
+	.attr("height", 10)
+	.attr("id", "legend");
 
-legend.append("circle");
+legend.append("circle")
+	.attr("r", 5)
+	.attr("cx", 5)
+	.attr("cy", 5)
+	.attr("opacity", dot_opacity)
+	.attr("fill", "blue");
 
-//escalas de fecha y nivel
+legend.append("text")
+	.attr("x", 15)
+	.attr("y", 8)
+	.text("cada circulo representa una sesión de un alumno");
+
+legend.append("circle")
+	.attr("r", 3)
+	.attr("cx", 320)
+	.attr("cy", 5)
+	.attr("opacity", dot_opacity)
+	.attr("fill", "blue");
+
+legend.append("circle")
+	.attr("r", 5)
+	.attr("cx", 330)
+	.attr("cy", 5)
+	.attr("opacity", dot_opacity)
+	.attr("fill", "blue");
+
+legend.append("text")
+	.attr("x", 340)
+	.attr("y", 8)
+	.text("el tamaño representa la duración de la sesión");
+
+legend.append("circle")
+	.attr("r", 5)
+	.attr("cx", 610)
+	.attr("cy", 5)
+	.attr("opacity", dot_opacity)
+	.attr("fill", "blue"); //variable!
+
+legend.append("text")
+	.attr("x", 620)
+	.attr("y", 8)
+	.text("low pre-test"); //variable!
+
+legend.append("circle")
+	.attr("r", 5)
+	.attr("cx", 700)
+	.attr("cy", 5)
+	.attr("opacity", dot_opacity)
+	.attr("fill", "red"); //variable!
+
+legend.append("text")
+	.attr("x", 710)
+	.attr("y", 8)
+	.text("high pre-test"); //variable!
+
+
+
+//escalas
 
 var date_scale = d3.scaleTime()
 	.domain([new Date(2016, 8, 20), new Date(2016, 11, 20)])
@@ -60,18 +119,24 @@ var activity_contained_scale = d3.scaleLinear()
 	.domain([0, 169])
 	.range([1, 5]);
 	
+
+// ejes
+
 var date_axis = d3.axisBottom(date_scale);
 
 var nivel_names = ["variables", "", "comparisons", "if statements", "logical operators", 
 	"loops", "output formatting", "functions", "lists", "strings", "dictionary", 
 	"values references", "exceptions", "file handling", "classes & objects"]; 
 var nivel_axis = d3.axisRight(nivel_scale)
+	.ticks(15)
 	.tickFormat(function(i) {
 		return nivel_names[i-1];
 	});
 
 	    
-// el bucle grande que hace todo para los tres svgs	    
+
+// el bucle grande que hace todo para los tres svgs	  
+
 for (var q = 0; q < 3; q++) {
 	
 	var svg = svg_array[q];
@@ -164,7 +229,7 @@ for (var q = 0; q < 3; q++) {
 
 
 // event handling -- el raton
-d3.selectAll("svg").selectAll("circle")
+d3.selectAll(".graphs").selectAll("circle")
 
 	.on("mouseover", function(d) {
 		var parent_svg = d3.select(this.parentNode);
@@ -199,7 +264,7 @@ d3.selectAll("svg").selectAll("circle")
 	.on("mouseout", function(d) {
 		var parent_svg = d3.select(this.parentNode);
 		
-		d3.selectAll("circle")
+		parent_svg.selectAll("circle")
 			.transition()
 			.delay(100)
 	      	//.attr("r", dot_radius/(Math.sqrt(scale_factor)))
@@ -223,7 +288,7 @@ var zoom_handler = d3.zoom()
 	.translateExtent([[0, 0], [svg_w, svg_h]]);
 
 // donde escuchar el zoom
-var los_tres_svgs = d3.select("#interface").selectAll("svg");
+var los_tres_svgs = d3.selectAll(".graphs");
 los_tres_svgs.call(zoom_handler);
 
 // que pasa en el zoom
@@ -233,7 +298,7 @@ function do_the_zoom() {
 	scale_factor = el_transform.scale(1).k;
 	
 	// transforma todos los circulos
-	d3.selectAll("circle")
+	d3.selectAll(".graphs").selectAll("circle")
 		.attr("transform", el_transform)
 		// mantiene un radio chico
 		.attr("r", function(d) {
