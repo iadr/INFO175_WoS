@@ -55,7 +55,7 @@ body{
   height: 100%;
   background: rgba(0, 0, 0, 0);
 }
-svg{
+.graphs{
 	padding: 10px 30px;
 }
 #translucent_borders{
@@ -69,8 +69,13 @@ svg{
     stroke-width: 0;
     font-size: 8px;
 }
-#legend{
+.legend{
 	font-size: 10px;
+	margin: auto;
+	width: 80%;
+}
+#leg2{
+	width: 30%;
 }
 .view{
   margin: 1.5%;

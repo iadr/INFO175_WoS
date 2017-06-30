@@ -25,7 +25,7 @@ d3.select("body")
 	.select("#interface")
 	.append("svg")
 	.attr("width", svg_w)
-	.attr("height", 1);
+	.attr("height", 20);
 
 var svg_array = []
 for (var q = 0; q < 3; q++) {
@@ -41,67 +41,77 @@ for (var q = 0; q < 3; q++) {
 
 // maybe make 3 separate svgs?
 //legend
-var legend = d3.select("body")
-	.select("#interface")
+
+var leg1 = d3.select("#interface")
+	.append("div")
+	.attr("class", "legend")
+	.attr("id", "leg1")
 	.append("svg")
 	.attr("width", svg_w)
-	.attr("height", 10)
-	.attr("id", "legend");
+	.attr("height", 10);
 
-legend.append("circle")
-	.attr("r", 5)
-	.attr("cx", 5)
-	.attr("cy", 5)
-	.attr("opacity", dot_opacity)
-	.attr("fill", "blue");
+	leg1.append("circle")
+		.attr("r", 5)
+		.attr("cx", 55)
+		.attr("cy", 5)
+		.attr("opacity", dot_opacity)
+		.attr("fill", "blue");
+	
+	leg1.append("text")
+		.attr("x", 65)
+		.attr("y", 8)
+		.text("cada circulo representa una sesión de un alumno");
 
-legend.append("text")
-	.attr("x", 15)
-	.attr("y", 8)
-	.text("cada circulo representa una sesión de un alumno");
+	leg1.append("circle")
+		.attr("r", 3)
+		.attr("cx", 370)
+		.attr("cy", 5)
+		.attr("opacity", dot_opacity)
+		.attr("fill", "blue");
+	
+	leg1.append("circle")
+		.attr("r", 5)
+		.attr("cx", 380)
+		.attr("cy", 5)
+		.attr("opacity", dot_opacity)
+		.attr("fill", "blue");
+	
+	leg1.append("text")
+		.attr("x", 390)
+		.attr("y", 8)
+		.text("el tamaño representa la duración de la sesión");
 
-legend.append("circle")
-	.attr("r", 3)
-	.attr("cx", 320)
-	.attr("cy", 5)
-	.attr("opacity", dot_opacity)
-	.attr("fill", "blue");
+var leg2 = d3.select("#interface")
+	.append("div")
+	.attr("class", "legend")
+	.attr("id", "leg2")
+	.append("svg")
+	.attr("width", 200)
+	.attr("height", 10);
 
-legend.append("circle")
-	.attr("r", 5)
-	.attr("cx", 330)
-	.attr("cy", 5)
-	.attr("opacity", dot_opacity)
-	.attr("fill", "blue");
-
-legend.append("text")
-	.attr("x", 340)
-	.attr("y", 8)
-	.text("el tamaño representa la duración de la sesión");
-
-legend.append("circle")
-	.attr("r", 5)
-	.attr("cx", 610)
-	.attr("cy", 5)
-	.attr("opacity", dot_opacity)
-	.attr("fill", "blue"); //variable!
-
-legend.append("text")
-	.attr("x", 620)
-	.attr("y", 8)
-	.text("low pre-test"); //variable!
-
-legend.append("circle")
-	.attr("r", 5)
-	.attr("cx", 700)
-	.attr("cy", 5)
-	.attr("opacity", dot_opacity)
-	.attr("fill", "red"); //variable!
-
-legend.append("text")
-	.attr("x", 710)
-	.attr("y", 8)
-	.text("high pre-test"); //variable!
+	leg2.append("circle")
+		.attr("r", 5)
+		.attr("cx", 10)
+		.attr("cy", 5)
+		.attr("opacity", dot_opacity)
+		.attr("fill", "blue"); //variable!
+	
+	leg2.append("text")
+		.attr("x", 20)
+		.attr("y", 8)
+		.text("low pre-test"); //variable!
+	
+	leg2.append("circle")
+		.attr("r", 5)
+		.attr("cx", 100)
+		.attr("cy", 5)
+		.attr("opacity", dot_opacity)
+		.attr("fill", "red"); //variable!
+	
+	leg2.append("text")
+		.attr("x", 110)
+		.attr("y", 8)
+		.text("high pre-test"); //variable!
 
 
 
