@@ -47,39 +47,39 @@ var leg1 = d3.select("#interface")
 	.attr("class", "legend")
 	.attr("id", "leg1")
 	.append("svg")
-	.attr("width", svg_w)
-	.attr("height", 10);
+	.attr("width", 600)
+	.attr("height", 12);
 
 	leg1.append("circle")
 		.attr("r", 5)
-		.attr("cx", 55)
+		.attr("cx", 5)
 		.attr("cy", 5)
 		.attr("opacity", dot_opacity)
 		.attr("fill", "blue");
 	
 	leg1.append("text")
-		.attr("x", 65)
+		.attr("x", 15)
 		.attr("y", 8)
 		.text("cada circulo representa una sesión de un alumno");
 
 	leg1.append("circle")
 		.attr("r", 3)
-		.attr("cx", 370)
+		.attr("cx", 320)
 		.attr("cy", 5)
 		.attr("opacity", dot_opacity)
 		.attr("fill", "blue");
 	
 	leg1.append("circle")
 		.attr("r", 5)
-		.attr("cx", 380)
+		.attr("cx", 330)
 		.attr("cy", 5)
 		.attr("opacity", dot_opacity)
 		.attr("fill", "blue");
 	
 	leg1.append("text")
-		.attr("x", 390)
+		.attr("x", 340)
 		.attr("y", 8)
-		.text("el tamaño representa la duración de la sesión");
+		.text("el tamaño representa la duración de la sesión"); //verdad?
 
 var leg2 = d3.select("#interface")
 	.append("div")
@@ -87,31 +87,31 @@ var leg2 = d3.select("#interface")
 	.attr("id", "leg2")
 	.append("svg")
 	.attr("width", 200)
-	.attr("height", 10);
+	.attr("height", 12);
 
 	leg2.append("circle")
 		.attr("r", 5)
 		.attr("cx", 10)
 		.attr("cy", 5)
 		.attr("opacity", dot_opacity)
-		.attr("fill", "blue"); //variable!
+		.attr("fill", "blue");
 	
 	leg2.append("text")
 		.attr("x", 20)
 		.attr("y", 8)
-		.text("low pre-test"); //variable!
+		.text("low pre-test");
 	
 	leg2.append("circle")
 		.attr("r", 5)
 		.attr("cx", 100)
 		.attr("cy", 5)
 		.attr("opacity", dot_opacity)
-		.attr("fill", "red"); //variable!
+		.attr("fill", "red");
 	
 	leg2.append("text")
 		.attr("x", 110)
 		.attr("y", 8)
-		.text("high pre-test"); //variable!
+		.text("high pre-test");
 
 
 
@@ -166,7 +166,6 @@ for (var q = 0; q < 3; q++) {
 	    var pretest = group_data[i].Pretest;
 	    var studentID = group_data[i].usuario;
 	    var activity_contained = group_data[i].total_act;
-	    console.log(group_data[i].total_act);
 	    dataset.push([la_fecha, newLevel, pretest, studentID, activity_contained]);	    
 	}
 	
