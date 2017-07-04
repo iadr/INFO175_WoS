@@ -138,26 +138,15 @@
   display: none;
 }
 /*colores*/
-#PLogo{
-  color: #52ff00;
-}
-#QLogo{
-  color: #fff500;
-}
-#ELogo{
-  color: #ff8200;
-}
-#AELogo{
-  color: #ff0000;
-}
+
 #NonRadio{
-  color: #0012ff;
+  color: #0040ff;
 }
 #HighLogo{
-  color: #9600ff;
+  color: #ff0000;
 }
 #LowLogo{
-  color: #014706;
+  color: #0040ff;
   margin-left: 0;
 }
 label{
