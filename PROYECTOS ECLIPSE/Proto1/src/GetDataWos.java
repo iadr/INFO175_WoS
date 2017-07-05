@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
  * Ver el método doGet
  */
 @WebServlet("/GetData")
-public class GetData extends HttpServlet {
+public class GetDataWos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private DBInterface dbInterface; // dbInterface es para conectarse a la base de datos
+    private InterfaceWoS dbInterface; // dbInterface es para conectarse a la base de datos
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetData() {
+    public GetDataWos() {
         super();
     }
 
@@ -39,7 +39,7 @@ public class GetData extends HttpServlet {
 		
 		// Usamos esta clase ConfigManager para leer y cargar variables de configuración 
 		// definidas en el archivo config.xml
-		ConfigManager cm = new ConfigManager(this);
+		CManagerWoS cm = new CManagerWoS(this);
 		
 		// Un ejemplo de como capturar un parametr de url. Si el paramtero no viene en la url, la variable se le asignará null
 		String userId = request.getParameter("userid");
@@ -55,7 +55,7 @@ public class GetData extends HttpServlet {
 		}
 		
 		// Se inicializa el objeto de conexión a la base de datos
-		dbInterface = new DBInterface(cm.dbString, cm.dbUser, cm.dbPass);
+		dbInterface = new InterfaceWoS(cm.dbString, cm.dbUser, cm.dbPass);
 		dbInterface.openConnection(); // abrir la conexión
 		
 		// llamada a la función getData que hace la consulta a la base de datos
