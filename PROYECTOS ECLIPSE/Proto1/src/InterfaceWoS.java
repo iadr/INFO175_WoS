@@ -7,7 +7,7 @@ import java.util.*;
  * 
  *
  */
-public class DBInterface {
+public class InterfaceWoS {
 	protected String dbString;
 	protected String dbUser;
 	protected String dbPass;
@@ -16,7 +16,7 @@ public class DBInterface {
 	protected Statement stmt = null; 
 	protected ResultSet rs = null;
 	
-	public DBInterface(String connurl, String user, String pass){
+	public InterfaceWoS(String connurl, String user, String pass){
 		dbString = connurl;
 		dbUser = user;
 		dbPass = pass;

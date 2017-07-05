@@ -12,14 +12,14 @@ import org.w3c.dom.Document;
  * 
  *
  */
-public class ConfigManager {
+public class CManagerWoS {
 	public String dbString;
 	public String dbUser;
 	public String dbPass;
 
 	private static String config_string = "./WEB-INF/config.xml";
 
-	public ConfigManager(HttpServlet servlet) {
+	public CManagerWoS(HttpServlet servlet) {
 		try {
 			ServletContext context = servlet.getServletContext();
 			InputStream input = context.getResourceAsStream(config_string);
