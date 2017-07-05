@@ -71,14 +71,14 @@ body{
     stroke-width: 0;
     font-size: 8px;
 }
-.legend{
-	font-size: 10px;
-	padding: 5px;
-	margin: auto;
-	width: 600px;
+#legend{
+	padding: 10px;
 }
-#leg2{
-	width: 30%;
+.legend_components{
+	padding: 2px;
+	font-size: 10px;
+	display: block;
+	margin: auto;
 }
 .view{
   margin: 1.5%;

@@ -1,7 +1,8 @@
 
 var ig=0;
 var datar=[]
-  function lee_json() {
+
+function lee_json() {
     $.getJSON("data.json",function(data){
 
 //data tiene los elementos de data.json
@@ -40,60 +41,61 @@ for (var q = 0; q < 3; q++) {
 }
 
 // maybe make 3 separate svgs?
+
 //legend
-
-var leg1 = d3.select("#interface")
-	.append("div")
-	.attr("class", "legend")
-	.attr("id", "leg1")
-	.append("svg")
-	.attr("width", 600)
-	.attr("height", 12);
-
+function drawLegend(dot_op) {
+	var legend = d3.select("#interface")
+		.append("div")
+		.attr("id", "legend");
+	
+	var leg1 = legend.append("div").append("svg")
+		.attr("id", "leg1")
+		.attr("class", "legend_components")
+		.attr("width", 600)
+		.attr("height", 12);
+	
 	leg1.append("circle")
 		.attr("r", 5)
-		.attr("cx", 5)
+		.attr("cx", 10)
 		.attr("cy", 5)
-		.attr("opacity", dot_opacity)
+		.attr("opacity", dot_op)
 		.attr("fill", "blue");
 	
 	leg1.append("text")
-		.attr("x", 15)
+		.attr("x", 20)
 		.attr("y", 8)
 		.text("cada circulo representa una sesión de un alumno");
-
+	
 	leg1.append("circle")
 		.attr("r", 3)
-		.attr("cx", 320)
+		.attr("cx", 325)
 		.attr("cy", 5)
-		.attr("opacity", dot_opacity)
+		.attr("opacity", dot_op)
 		.attr("fill", "blue");
 	
 	leg1.append("circle")
 		.attr("r", 5)
-		.attr("cx", 330)
+		.attr("cx", 335)
 		.attr("cy", 5)
-		.attr("opacity", dot_opacity)
+		.attr("opacity", dot_op)
 		.attr("fill", "blue");
 	
 	leg1.append("text")
-		.attr("x", 340)
+		.attr("x", 345)
 		.attr("y", 8)
 		.text("el tamaño representa la duración de la sesión"); //verdad?
-
-var leg2 = d3.select("#interface")
-	.append("div")
-	.attr("class", "legend")
-	.attr("id", "leg2")
-	.append("svg")
-	.attr("width", 200)
-	.attr("height", 12);
-
+	
+	var leg2 = legend.append("div").append("svg")
+		.attr("id", "leg2")
+		.attr("class", "legend_components")
+		.attr("width", 200)
+		.attr("height", 12);
+	
 	leg2.append("circle")
 		.attr("r", 5)
 		.attr("cx", 10)
 		.attr("cy", 5)
-		.attr("opacity", dot_opacity)
+		.attr("opacity", dot_op)
 		.attr("fill", "blue");
 	
 	leg2.append("text")
@@ -105,15 +107,16 @@ var leg2 = d3.select("#interface")
 		.attr("r", 5)
 		.attr("cx", 100)
 		.attr("cy", 5)
-		.attr("opacity", dot_opacity)
+		.attr("opacity", dot_op)
 		.attr("fill", "red");
 	
 	leg2.append("text")
 		.attr("x", 110)
 		.attr("y", 8)
 		.text("high pre-test");
+}
 
-
+drawLegend(dot_opacity);
 
 //escalas
 
@@ -333,5 +336,6 @@ function do_the_zoom() {
 
     }); 
 }
+
 lee_json();
 
