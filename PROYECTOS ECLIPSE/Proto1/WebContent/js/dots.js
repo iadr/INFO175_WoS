@@ -249,7 +249,7 @@ d3.selectAll(".graphs").selectAll("circle")
 			.transition()
     		.attr("fill-opacity", function(d2) {
     			if (d[3] != d2[3]) {
-    				return dot_opacity*.3;
+    				return dot_opacity*.1;
     			}
     			else {return dot_opacity};
     		})
