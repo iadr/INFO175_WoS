@@ -184,3 +184,7 @@
   * CAMBIAR GETSAMPLEDATA,GETPAHTSERVICE.
 * Además se debe crear un informe para documentar todo el trabajo, debe ir un manueal de usuario,el código.
   
+<h3> Semana 15 </h3>
+
+* Aun debemos conectar los datos
+* De nuestra presentacion se rescato lo siguien:
