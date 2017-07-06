@@ -6,7 +6,7 @@
  */
 
 var CONST = {
-  uriServer  : "http://localhost:8080/Proto1/"  
+  uriServer  : "146.83.216.206/INFO175_Servicios/"  
 };
 
 var data = null;
@@ -48,7 +48,7 @@ function displayData(res){
  */
 function loadData(){
     //var url = CONST.uriServer + "GetSampleData";
-	var url = CONST.uriServer + "data.json";
+	var url = CONST.uriServer+"data.json";
     $.getJSON( url , function(data){
         displayData(data);
     });
