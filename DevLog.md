@@ -184,3 +184,12 @@
   * CAMBIAR GETSAMPLEDATA,GETPAHTSERVICE.
 * Además se debe crear un informe para documentar todo el trabajo, debe ir un manueal de usuario,el código.
   
+<h3> Semana 15 </h3>
+
+* Aun debemos conectar los datos.
+* De nuestra presentacion se rescato lo siguiente:
+  * Mejorar leyenda.
+  * Eliminacion de algunos filtros.
+  * Creación de un scrip para la leyenda.
+  * Y se suguirio que el tamaño de los puntos podria representar el nivel de actividad.
+* La proxima semana es la ultima, por lo tanto se debe finiquitar todo.
