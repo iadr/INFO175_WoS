@@ -57,7 +57,7 @@ function drawLegend(dot_op) {
 		.attr("cx", 10)
 		.attr("cy", 5)
 		.attr("opacity", dot_op)
-		.attr("fill", "blue");
+		.attr("fill", "green");
 	
 	leg1.append("text")
 		.attr("x", 20)
@@ -69,14 +69,14 @@ function drawLegend(dot_op) {
 		.attr("cx", 325)
 		.attr("cy", 5)
 		.attr("opacity", dot_op)
-		.attr("fill", "blue");
+		.attr("fill", "green");
 	
 	leg1.append("circle")
 		.attr("r", 5)
 		.attr("cx", 335)
 		.attr("cy", 5)
 		.attr("opacity", dot_op)
-		.attr("fill", "blue");
+		.attr("fill", "green");
 	
 	leg1.append("text")
 		.attr("x", 345)
@@ -94,7 +94,7 @@ function drawLegend(dot_op) {
 		.attr("cx", 10)
 		.attr("cy", 5)
 		.attr("opacity", dot_op)
-		.attr("fill", "blue");
+		.attr("fill", "orange");
 	
 	leg2.append("text")
 		.attr("x", 20)
@@ -106,7 +106,7 @@ function drawLegend(dot_op) {
 		.attr("cx", 100)
 		.attr("cy", 5)
 		.attr("opacity", dot_op)
-		.attr("fill", "red");
+		.attr("fill", "green");
 	
 	leg2.append("text")
 		.attr("x", 110)
@@ -187,10 +187,10 @@ for (var q = 0; q < 3; q++) {
 		})
 		.attr("fill", function(d) {
 			if (d[2] == 2) {
-				return "red";
+				return "green";
 			}
 			else {
-				return "blue";
+				return "orange";
 			}
 		})
 		.attr("class", function(d) {
