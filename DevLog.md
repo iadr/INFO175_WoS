@@ -186,5 +186,9 @@
   
 <h3> Semana 15 </h3>
 
-* Aun debemos conectar los datos
+* Aun debemos conectar los datos.
 * De nuestra presentacion se rescato lo siguien:
+  * Mejorar leyenda.
+  * Eliminacion de algunos filtros.
+  * Creación de un scrip para la leyenda.
+  * Y se suguirio que el tamaño de los puntos podria representar el nivel de actividad.
