@@ -40,8 +40,6 @@ for (var q = 0; q < 3; q++) {
 	svg_array.push(an_svg);
 }
 
-// maybe make 3 separate svgs?
-
 //legend
 function drawLegend(dot_op) {
 	var legend = d3.select("#interface")
